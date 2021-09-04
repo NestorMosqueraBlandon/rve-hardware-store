@@ -1,0 +1,23 @@
+.header{
+    background-color: #07060A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 40px;
+    margin: 0;
+}
+
+.header img{
+    width: 20px;
+}
+
+.menu{
+    background-color: aliceblue;
+    width: 20px;
+    height: 1px;
+}
+
+.menu:first-child{
+    margin-bottom: .5rem;
+}
