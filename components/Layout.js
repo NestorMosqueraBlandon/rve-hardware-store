@@ -1,7 +1,9 @@
 import Head from "next/head"
 import Image from "next/image"
+import Link from "next/Link"
 import useStyles from "../utils/styles"
 import Header from '../styles/Header.module.css'
+import logo from '../public/images/logo.svg'
 
 export default function Layout({children}) {
     const classes = useStyles();
@@ -18,7 +20,11 @@ export default function Layout({children}) {
                     <div className={Header.menu}></div>
                     <div className={Header.menu}></div>
                 </div>
-                <p><img src="./images/logo.svg" alt="" /></p>
+                <Link href="/" passHref>
+                    <a>
+                        <Image src={logo} alt="Logo RVE HARDWARE" />
+                    </a>
+                </Link>
                 <div></div>
             </header>
             <main className='main'>

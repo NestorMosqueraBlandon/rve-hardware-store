@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from '@material-ui/core'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -5,11 +6,11 @@ import Layout from '../components/Layout'
 import styles from '../styles/Home.module.css'
 import card from '../styles/Card.module.css'
 import data from '../utils/data.js'
+import { useState } from 'react'
 
 export default function Home() {
   
-  
-
+  const [type, setType] = useState('gamer');
   return (
     <Layout>
       <div className="container">
@@ -23,12 +24,39 @@ export default function Home() {
         </div>
         <h2>Potenciar la mejor tanto en el trabajo como en el juego.</h2>
         <div className={styles.buttons}>
-          <button>Notebooks</button>
-          <button className={styles.active}>PC Gamer</button>
-          <button>WorkStations</button>
+          <button onClick={()=> setType('notebooks')} className={type == 'notebooks'? styles.active : ''}>Notebooks</button>
+          <button onClick={()=> setType('gamer')} className={type == 'gamer'? styles.active : ''}>PC Gamer</button>
+          <button onClick={()=> setType('workstation')} className={type == 'workstation'? styles.active : ''}>WorkStations</button>
         </div>
 
         <div className={styles.grid}>
+          {type === 'workstation'? 
+          <>
+          {data.workstations.map((computer) => (
+            <div className={card.card} key={computer.name}>
+              <div >
+                <img src={computer.image} alt="" />
+              </div>
+              <div>
+                <div className={card.header}>
+                  <h2>{computer.name}</h2>
+                  <p>{computer.price}</p>
+                </div>
+                <ul>
+                  <li><img className={styles.icon} src="./images/icons/cpu.png" alt="" /> {computer.cpu}</li>
+                  <li><img className={styles.icon} src="./images/icons/motherboard.png" alt="" /> {computer.motherboard}</li>
+                  <li><img className={styles.icon} src="./images/icons/ram.png" alt="" /> {computer.ram}</li>
+                  <li><img className={styles.icon} src="./images/icons/ssd-drive.png" alt="" /> {computer.ssd}</li>
+                  <li><img className={styles.icon} src="./images/icons/hdd.png" alt="" /> {computer.hdd}</li>
+                  <li><img className={styles.icon} src="./images/icons/gpu.png" alt="" /> {computer.gpu}</li>
+                </ul>
+                <button className={card.button}>Anadir al carrito</button>    
+              </div>
+            </div>
+          ))}
+          </>
+          : type === 'gamer'?
+          <>
           {data.computers.map((computer) => (
             <div className={card.card} key={computer.name}>
               <div >
@@ -51,13 +79,42 @@ export default function Home() {
               </div>
             </div>
           ))}
+          </>
+          :
+          <>
+          {data.notebooks.map((computer) => (
+            <div className={card.card} key={computer.name}>
+              <div >
+                <img src={computer.image} alt="" />
+              </div>
+              <div>
+                <div className={card.header}>
+                  <h2>{computer.name}</h2>
+                  <p>{computer.price}</p>
+                </div>
+                <ul>
+                  <li><img className={styles.icon} src="./images/icons/cpu.png" alt="" /> {computer.cpu}</li>
+                  <li><img className={styles.icon} src="./images/icons/motherboard.png" alt="" /> {computer.motherboard}</li>
+                  <li><img className={styles.icon} src="./images/icons/ram.png" alt="" /> {computer.ram}</li>
+                  <li><img className={styles.icon} src="./images/icons/ssd-drive.png" alt="" /> {computer.ssd}</li>
+                  <li><img className={styles.icon} src="./images/icons/hdd.png" alt="" /> {computer.hdd}</li>
+                  <li><img className={styles.icon} src="./images/icons/gpu.png" alt="" /> {computer.gpu}</li>
+                </ul>
+                <button className={card.button}>Anadir al carrito</button>    
+              </div>
+            </div>
+          ))}
+          </>
+        }
         </div>
         <div className={styles.warranty}>
             <div>
-
+              <img src="./images/notes.svg" alt="" />
+              <h2>2 Anos de Garantia</h2>
             </div>
             <div>
-
+              <img src="./images/diamond.svg" alt="" />
+              <h2>2 Anos de Garantia</h2>
             </div>
         </div>
         {/* <Grid container spacing={3}>
