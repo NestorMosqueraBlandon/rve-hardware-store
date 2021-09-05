@@ -2,8 +2,9 @@ const data = {
     computers:  [
         {
             name: 'PC GAMER SLASH',
+            slug: 'pc-gamer-slash',
             category: 'AMD',
-            image: './images/pc1.png',
+            image: '/images/pc1.png',
             price: 2200000,
             brand: 'AMD',
             rating: 4.5,
@@ -20,8 +21,9 @@ const data = {
         },
         {
             name: 'PC GAMER BUDDY',
+            slug: 'pc-gamer-buddy',
             category: 'AMD',
-            image: './images/pc3.png',
+            image: '/images/pc3.png',
             price: 2200000,
             brand: 'AMD',
             rating: 4.5,
@@ -37,8 +39,9 @@ const data = {
         },
         {
             name: 'PC GAMER NIWARO',
+            slug: 'pc-gamer-niwaro',
             category: 'AMD',
-            image: './images/pc2.png',
+            image: '/images/pc2.png',
             price: 2200000,
             brand: 'AMD',
             rating: 4.5,
@@ -54,6 +57,7 @@ const data = {
         },
         {
             name: 'PC GAMER WOLF',
+            slug: 'pc-gamer-wolf',
             category: 'AMD',
             image: './images/pc1.png',
             price: 2200000,
@@ -71,6 +75,7 @@ const data = {
         },
         {
             name: 'PC GAMER DASH',
+            slug: 'pc-gamer-dash',
             category: 'AMD',
             image: '/images/pc4.png',
             price: 2200000,
@@ -88,6 +93,7 @@ const data = {
         },
         {
             name: 'PC GAMER DEAPTREAD',
+            slug: 'pc-gamer-deaptread',
             category: 'AMD',
             image: './images/pc1.png',
             price: 2200000,

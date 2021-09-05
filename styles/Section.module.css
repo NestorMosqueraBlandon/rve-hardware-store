@@ -1,0 +1,47 @@
+.button{
+    background-color: royalblue;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    width: 80px;
+    left: calc(50% - 60px);
+    color: #f2f6fa;
+}
+
+.container{
+    text-align: center;
+}
+
+.container h2{
+    margin-top: 50px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.container h4{
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 50px;
+}
+
+.hero{
+    position: relative;
+    min-height: 80vh;
+    overflow: hidden;
+}
+
+.hero div{
+    width: 100%;
+}
+
+
+.hero::after{
+    content: '';
+    position: absolute;
+    bottom:80px;
+    left: 0;
+    width: 130%;
+    height: 30%;
+    background-color: #07060A;
+    filter: blur(60px);
+}

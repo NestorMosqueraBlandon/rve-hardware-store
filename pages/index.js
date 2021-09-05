@@ -2,6 +2,7 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from '@material-ui/core'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import Layout from '../components/Layout'
 import styles from '../styles/Home.module.css'
 import card from '../styles/Card.module.css'
@@ -59,6 +60,9 @@ export default function Home() {
           <>
           {data.computers.map((computer) => (
             <div className={card.card} key={computer.name}>
+              <Link href={`/computer/${computer.slug}`} passHref>
+                <a>
+
               <div >
                 <img src={computer.image} alt="" />
               </div>
@@ -77,6 +81,8 @@ export default function Home() {
                 </ul>
                 <button className={card.button}>Anadir al carrito</button>    
               </div>
+                </a>
+            </Link>
             </div>
           ))}
           </>
@@ -108,13 +114,15 @@ export default function Home() {
         }
         </div>
         <div className={styles.warranty}>
-            <div>
-              <img src="./images/notes.svg" alt="" />
-              <h2>2 Anos de Garantia</h2>
+            <div className={styles.item}>
+              <img src="./images/icons/notes.svg" alt="" />
+              <h2>18 Meses de Garantia</h2>
+              <p>Ofrecemos una garantía de hasta 18 meses para mano de obra y hasta 23 meses para reemplazo de piezas.</p>
             </div>
-            <div>
-              <img src="./images/diamond.svg" alt="" />
-              <h2>2 Anos de Garantia</h2>
+            <div className={styles.item}>
+              <img src="./images/icons/diamond.svg" alt="" />
+              <h2>Soporte de Por Vida</h2>
+              <p>Nuestro personal de soporte técnico está altamente capacitado en marcos de aprendizaje profundo</p>
             </div>
         </div>
         {/* <Grid container spacing={3}>
