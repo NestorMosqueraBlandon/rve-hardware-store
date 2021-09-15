@@ -24,7 +24,9 @@ export default function Home() {
           </div>
         </div>
         <h2>Potenciar la mejor tanto en el trabajo como en el juego.</h2>
-        <button className="btnmonitor"> <a href="/files/RVEMonitor.zip"> Hardware Monitor </a> </button>
+        <Link href="/files/RVEMonitor.zip" className="btnmonitor">
+           <a> Hardware Monitor </a> 
+        </Link>
         <div className={styles.buttons}>
           <button onClick={()=> setType('notebooks')} className={type == 'notebooks'? styles.active : ''}>Notebooks</button>
           <button onClick={()=> setType('gamer')} className={type == 'gamer'? styles.active : ''}>PC Gamer</button>
