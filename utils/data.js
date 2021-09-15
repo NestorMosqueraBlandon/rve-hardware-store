@@ -41,7 +41,7 @@ const data = {
             name: 'PC GAMER NIWARO',
             slug: 'pc-gamer-niwaro',
             category: 'AMD',
-            image: '/images/pc2.png',
+            image: '999999/images/pc2.png',
             price: 2200000,
             brand: 'AMD',
             rating: 4.5,

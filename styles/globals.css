@@ -164,6 +164,15 @@ details:not([open]) summary ~ *
     
 }
 
+.btnmonitor{
+  border: none;
+  padding: .5rem;
+  border-radius: 5px;
+  background-color: dodgerblue;
+  color: #f2f6fa;
+  margin-top: 15px;
+}
+
 details[open] summary ~ * {
   animation: sweep .5s ease-in-out;
 }

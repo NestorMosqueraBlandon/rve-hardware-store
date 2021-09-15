@@ -45,3 +45,63 @@
     background-color: #07060A;
     filter: blur(60px);
 }
+
+.imgcontainer{
+    width: 100px;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.details ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.details ul li{
+    display: flex;
+    background-color: rgba(255, 255, 255, .1);
+    padding: 10px;
+}
+
+.icon{
+    filter: invert(1);
+    width: 25px;
+    margin-right: 10px;
+}
+
+.games{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.games li{
+    display: inline-block;
+}
+
+.games img{
+    width: 80px;
+}
+
+.gamescontainer{
+    padding: 10px;
+    text-align: left;
+}
+
+.line{
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, .2);
+    margin: 6px 0;
+}
