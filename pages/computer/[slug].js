@@ -4,8 +4,12 @@ import { useRouter } from "next/dist/client/router"
 import Layout from "../../components/Layout";
 import data from "../../utils/data";
 import styles from "../../styles/Section.module.css"
+import axios from "axios";
+import { useContext } from "react";
+import { Store } from "../../utils/Store";
 
 export default function ProductScreen() {
+    const {state, dispatch} = useContext(Store);
     const router = useRouter();
     const {slug} = router.query;
     const computer = data.computers.find(a => a.slug === slug)
@@ -13,7 +17,15 @@ export default function ProductScreen() {
     if(!computer){
         return <div>Computer Not found</div>
     }
+    
+    const addToCartHandler = async() => {
+        // const {data} = await axios.get(`http://rveapi.herokuapp.com/api/v1/computers/${computer._id}`);
+        dispatch({type: 'CART_ADD_ITEM', payload: {...computer, quantity: 1}})
+        router.push('/cart')
+    }
     return (
+        
+        
         <Layout title={computer.name}>
             <div className={styles.header}>
                 <details>
@@ -22,7 +34,7 @@ export default function ProductScreen() {
                         {computer.name}
                         <div>
                             <i className='bx bx-chevron-down'></i>
-                            <button className={styles.button}>Comprar</button>
+                            <button onClick={addToCartHandler} className={styles.button}>Comprar</button>
                         </div>
                     </summary>
                         <ul>
@@ -62,5 +74,7 @@ export default function ProductScreen() {
                 </div>
             </div>
         </Layout>
+        
+
     )
 }

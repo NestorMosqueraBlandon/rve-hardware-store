@@ -1,12 +1,20 @@
 import Head from "next/head"
 import Image from "next/image"
-import Link from "next/Link"
+import Link from "next/link"
 import useStyles from "../utils/styles"
 import Header from '../styles/Header.module.css'
 import logo from '../public/images/logo.svg'
+import Cookies from "js-cookie"
+
+import { Store } from "../utils/Store"
+import { useContext } from "react"
+import Menu from "./Menu"
 
 export default function Layout({title, children}) {
     const classes = useStyles();
+
+    const {state, dispatch} = useContext(Store);
+    const {cart} = state;
     return (
         <>
             <Head>
@@ -27,29 +35,25 @@ export default function Layout({title, children}) {
                     </a>
                 </Link>
                 <div className={Header.left}>
-                    <Link href="cart">
-                        <a>
-                            <i className='bx bxs-cart'></i>
-                        </a>
-                    </Link>
-                    <Link href="login">
+                    {/* <Link href="/login">
                         <a>
                             <i className='bx bxs-user'></i>
                         </a>
-                    </Link>
+                    </Link> */}
                 </div>
             </header>
             <main className='main'>
                 {children}
             </main>
-            <footer className={Header.footer}>
+            {/* <footer className={Header.footer}>
                 <p>
                     RVE Hardware &copy; 2021
                 </p>
                 <ul>
                     <li></li>
                 </ul>
-            </footer>
+            </footer> */}
+            <Menu/>
         </>
     )
 }

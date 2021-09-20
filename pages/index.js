@@ -9,7 +9,7 @@ import card from '../styles/Card.module.css'
 import data from '../utils/data.js'
 import { useState } from 'react'
 
-export default function Home() {
+export default function Home({computers}) {
   
   const [type, setType] = useState('gamer');
   return (
@@ -60,7 +60,7 @@ export default function Home() {
           : type === 'gamer'?
           <>
           {data.computers.map((computer) => (
-            <div className={card.card} key={computer.name}>
+            <div className={card.card} key={computer._id}>
               <Link href={`/computer/${computer.slug}`} passHref>
                 <a>
 
@@ -72,6 +72,7 @@ export default function Home() {
                   <h2>{computer.name}</h2>
                   <p>{computer.price}</p>
                 </div>
+
                 <ul>
                   <li><img className={styles.icon} src="./images/icons/cpu.png" alt="" /> {computer.cpu}</li>
                   <li><img className={styles.icon} src="./images/icons/motherboard.png" alt="" /> {computer.motherboard}</li>
@@ -154,4 +155,18 @@ export default function Home() {
       </div>
     </Layout>
   )
+}
+
+export async function getStaticProps(){
+  try{
+
+    const res = await fetch('http://rveapi.herokuapp.com/api/v1/computers')
+    const data = await res.json()
+  console.log(data)
+    return {
+      props: {computers: data.computers},
+    }
+  }catch(err){
+    console.log(err)
+  }
 }
