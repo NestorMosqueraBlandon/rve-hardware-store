@@ -13,7 +13,7 @@ export default function Cart() {
     const { cart: { cartItems } } = state;
 
     const checkoutHandler = () => {
-        router.push('/shipping')
+        router.push('/login')
     }
     return (
         <Layout title="Carrito">
