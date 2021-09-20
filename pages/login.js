@@ -1,6 +1,4 @@
 import Layout from "../components/Layout";
-import { Link } from "next/link";
-import axios from "axios";
 
 export default function Login() {
     const submitHandler = (e) => {
