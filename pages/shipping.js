@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 
-export default function shipping() {
+export default function Shipping() {
     const router = useRouter();
     router.push('/login');
 
