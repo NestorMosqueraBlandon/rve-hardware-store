@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import { Link } from "next/link";
 import axios from "axios";
 
-export default function login() {
+export default function Login() {
     const submitHandler = (e) => {
         e.preventDefault();
         // const {data} = await axios.post('')
