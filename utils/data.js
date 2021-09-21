@@ -1,6 +1,7 @@
 const data = {
     computers:  [
         {
+            id: 1,
             name: 'PC GAMER SLASH',
             slug: 'pc-gamer-slash',
             category: 'AMD',
@@ -20,6 +21,7 @@ const data = {
 
         },
         {
+            id: 2,
             name: 'PC GAMER BUDDY',
             slug: 'pc-gamer-buddy',
             category: 'AMD',
@@ -38,10 +40,11 @@ const data = {
             gpu: 'Nvidia RTX 3080TI GPU'    
         },
         {
+            id: 3,
             name: 'PC GAMER NIWARO',
             slug: 'pc-gamer-niwaro',
             category: 'AMD',
-            image: '999999/images/pc2.png',
+            image: '/images/pc2.png',
             price: 2200000,
             brand: 'AMD',
             rating: 4.5,
@@ -56,6 +59,7 @@ const data = {
             gpu: 'Nvidia RTX 3080TI GPU'    
         },
         {
+            id: 4,
             name: 'PC GAMER WOLF',
             slug: 'pc-gamer-wolf',
             category: 'AMD',
@@ -74,6 +78,7 @@ const data = {
             gpu: 'Nvidia RTX 3080TI GPU'    
         },
         {
+            id: 5,
             name: 'PC GAMER DASH',
             slug: 'pc-gamer-dash',
             category: 'AMD',
@@ -92,6 +97,7 @@ const data = {
             gpu: 'Nvidia RTX 3080TI GPU'    
         },
         {
+            id: 6,
             name: 'PC GAMER DEAPTREAD',
             slug: 'pc-gamer-deaptread',
             category: 'AMD',
@@ -112,6 +118,7 @@ const data = {
     ],
     workstations:  [
         {
+            id: 7,
             name: 'WORKSTATION SLASH',
             category: 'AMD',
             image: './images/pc1.png',
@@ -130,6 +137,7 @@ const data = {
 
         },
         {
+            id: 8,
             name: 'WORKSTATION BUDDY',
             category: 'AMD',
             image: './images/pc3.png',
@@ -147,6 +155,7 @@ const data = {
             gpu: 'Nvidia RTX 3080TI GPU'    
         },
         {
+            id: 9,
             name: 'WORKSTATION NIWARO',
             category: 'AMD',
             image: './images/pc2.png',
@@ -164,6 +173,7 @@ const data = {
             gpu: 'Nvidia RTX 3080TI GPU'    
         },
         {
+            id: 10,
             name: 'WORKSTATION WOLF',
             category: 'AMD',
             image: './images/pc1.png',
@@ -181,6 +191,7 @@ const data = {
             gpu: 'Nvidia RTX 3080TI GPU'    
         },
         {
+            id: 11,
             name: 'WORKSTATION DASH',
             category: 'AMD',
             image: '/images/pc4.png',
@@ -198,6 +209,7 @@ const data = {
             gpu: 'Nvidia RTX 3080TI GPU'    
         },
         {
+            id: 12,
             name: 'WORKSTATION DEAPTREAD',
             category: 'AMD',
             image: './images/pc1.png',
@@ -217,6 +229,7 @@ const data = {
     ],
     notebooks:  [
         {
+            id: 13,
             name: 'NOTEBOOK SLASH',
             category: 'AMD',
             image: './images/nb1.png',
@@ -235,6 +248,7 @@ const data = {
 
         },
         {
+            id: 14,
             name: 'NOTEBOOK BUDDY',
             category: 'AMD',
             image: './images/pc3.png',
@@ -252,6 +266,7 @@ const data = {
             gpu: 'Nvidia RTX 3080TI GPU'    
         },
         {
+            id: 15,
             name: 'NOTEBOOK NIWARO',
             category: 'AMD',
             image: './images/pc2.png',
@@ -269,6 +284,7 @@ const data = {
             gpu: 'Nvidia RTX 3080TI GPU'    
         },
         {
+            id: 16,
             name: 'NOTEBOOK WOLF',
             category: 'AMD',
             image: './images/pc1.png',
@@ -286,6 +302,7 @@ const data = {
             gpu: 'Nvidia RTX 3080TI GPU'    
         },
         {
+            id: 17,
             name: 'NOTEBOOK DASH',
             category: 'AMD',
             image: '/images/pc4.png',
@@ -303,6 +320,7 @@ const data = {
             gpu: 'Nvidia RTX 3080TI GPU'    
         },
         {
+            id: 18,
             name: 'NOTEBOOK DEAPTREAD',
             category: 'AMD',
             image: './images/pc1.png',

@@ -35,7 +35,7 @@ export default function Home({computers}) {
           {type === 'workstation'? 
           <>
           {data.workstations.map((computer) => (
-            <div className={card.card} key={computer.name}>
+            <div className={card.card} key={computer.id}>
               <div >
                 <img src={computer.image} alt="" />
               </div>
@@ -60,7 +60,7 @@ export default function Home({computers}) {
           : type === 'gamer'?
           <>
           {data.computers.map((computer) => (
-            <div className={card.card} key={computer._id}>
+            <div className={card.card} key={computer.id}>
               <Link href={`/computer/${computer.slug}`} passHref>
                 <a>
 
@@ -91,7 +91,7 @@ export default function Home({computers}) {
           :
           <>
           {data.notebooks.map((computer) => (
-            <div className={card.card} key={computer.name}>
+            <div className={card.card} key={computer.id}>
               <div >
                 <img src={computer.image} alt="" />
               </div>
@@ -157,16 +157,16 @@ export default function Home({computers}) {
   )
 }
 
-export async function getStaticProps(){
-  try{
+// export async function getStaticProps(){
+//   try{
 
-    const res = await fetch('http://rveapi.herokuapp.com/api/v1/computers')
-    const data = await res.json()
-  console.log(data)
-    return {
-      props: {computers: data.computers},
-    }
-  }catch(err){
-    console.log(err)
-  }
-}
+//     const res = await fetch('http://rveapi.herokuapp.com/api/v1/computers')
+//     const data = await res.json()
+//   console.log(data)
+//     return {
+//       props: {computers: data.computers},
+//     }
+//   }catch(err){
+//     console.log(err)
+//   }
+// }

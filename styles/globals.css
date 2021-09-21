@@ -263,6 +263,7 @@ summary{
   align-items: center;
   justify-content: space-between;
   background-color: #07060A;
+  padding: 2.5rem;
 }
 
 .menu a{
@@ -410,4 +411,17 @@ form p{
   text-align: center;
   margin-top: 4rem;
   color: rgba(255, 255, 255, .3);
+}
+
+.profile-name a{
+  font-size: 1.2rem;
+}
+
+.special-text{
+  color: royalblue;
+}
+@media screen and (min-width: 500px) {
+  form{
+    max-width: 450px;
+  }
 }

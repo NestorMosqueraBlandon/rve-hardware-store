@@ -11,10 +11,11 @@ import { useContext } from "react"
 import Menu from "./Menu"
 
 export default function Layout({title, children}) {
-    const classes = useStyles();
 
     const {state, dispatch} = useContext(Store);
-    const {cart} = state;
+    const {cart, userInfo} = state;
+
+    console.log(userInfo)
     return (
         <>
             <Head>
@@ -35,6 +36,7 @@ export default function Layout({title, children}) {
                     </a>
                 </Link>
                 <div className={Header.left}>
+                    {userInfo ? <Link href="/profile" className="profile-name"><a> {userInfo.name}</a></Link>: <span></span>}
                     {/* <Link href="/login">
                         <a>
                             <i className='bx bxs-user'></i>
