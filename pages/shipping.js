@@ -10,10 +10,11 @@ export default function Shipping() {
     
     const {state, dispatch} = useContext(Store);
     const {userInfo} = state;
-    if(!userInfo){
-        router.push('/login?redirect=/shipping')
-    }
-
+    useEffect(() => {
+        if(!userInfo){
+            router.push('/login?redirect=/shipping')
+        }
+    })
     const [name, setName] = useState('');
     const [identification, setIdentification] = useState('');
     const [phone, setPhone] = useState('');
@@ -22,15 +23,11 @@ export default function Shipping() {
 
     const submitHandler = ({name, identification, phone,address, city}) => {
         dispatch({type: 'SAVE_SHIPPING_ADDRESS', payload: {name, identification, phone,address, city}})
-        Cookies.set('shippingAddress', {name, identification, phone,address, city})
-         router.push('/payment')
+        Cookies.set('shippingAddress', {name, identification, phone,address, city});
+        router.push('/payment')
     }
 
-    useEffect(() => {
-        if(!userInfo){
-            router.push('/login?redirect=/shipping')
-        }
-    })
+
     return (
         <Layout title="Datos de Envio">
         <form onSubmit={submitHandler}>
