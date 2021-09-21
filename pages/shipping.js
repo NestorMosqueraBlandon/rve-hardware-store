@@ -1,12 +1,13 @@
 import Cookies from "js-cookie";
 import Link from "next/link";
-import { useRouter } from "next/router"
+import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import { Store } from "../utils/Store";
 
 export default function Shipping() {
     const router = useRouter();
+    
     const {state, dispatch} = useContext(Store);
     const {userInfo} = state;
     if(!userInfo){
