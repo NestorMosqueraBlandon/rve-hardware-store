@@ -404,6 +404,12 @@ form p{
   font-size: 1.4rem;
 }
 
+.form-group input[type="radio"]{
+
+  width: 40px;
+  margin: 2px;
+}
+
 .login-register{
   font-size: 1.4rem;
   font-weight: 300;

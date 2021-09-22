@@ -15,7 +15,6 @@ export default function Layout({title, children}) {
     const {state, dispatch} = useContext(Store);
     const {cart, userInfo} = state;
 
-    console.log(userInfo)
     return (
         <>
             <Head>
@@ -37,11 +36,7 @@ export default function Layout({title, children}) {
                 </Link>
                 <div className={Header.left}>
                     {userInfo ? <Link href="/profile" className="profile-name"><a> {userInfo.name}</a></Link>: <span></span>}
-                    {/* <Link href="/login">
-                        <a>
-                            <i className='bx bxs-user'></i>
-                        </a>
-                    </Link> */}
+
                 </div>
             </header>
             <main className='main'>

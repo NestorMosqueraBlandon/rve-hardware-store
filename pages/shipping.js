@@ -1,5 +1,4 @@
 import Cookies from "js-cookie";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { useContext, useEffect, useState } from "react";
 import Layout from "../components/Layout";
@@ -8,22 +7,41 @@ import { Store } from "../utils/Store";
 export default function Shipping() {
     const router = useRouter();
     
-    const {state, dispatch} = useContext(Store);
-    const {userInfo} = state;
-    useEffect(() => {
-        if(!userInfo){
-            router.push('/login?redirect=/shipping')
-        }
-    })
     const [name, setName] = useState('');
     const [identification, setIdentification] = useState('');
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
 
-    const submitHandler = ({name, identification, phone,address, city}) => {
-        dispatch({type: 'SAVE_SHIPPING_ADDRESS', payload: {name, identification, phone,address, city}})
-        Cookies.set('shippingAddress', {name, identification, phone,address, city});
+
+    const {state, dispatch} = useContext(Store);
+    const {userInfo, cart: {shippingAddres},} = state;
+    useEffect(() => {
+        if(!userInfo){
+            router.push('/login?redirect=/shipping')
+        }
+
+        if(shippingAddres)
+        {
+            setName(shippingAddres.name)
+            setIdentification(shippingAddres.identification)
+            setPhone(shippingAddres.phone)
+            setAddress(shippingAddres.address)
+            setCity(shippingAddres.city)
+        }
+        
+        
+    }, [])
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+        console.log(name)
+        console.log(identification)
+        console.log(phone)
+        console.log(address)
+        console.log(city)
+        dispatch({type: 'SAVE_SHIPPING_ADDRESS', payload: {name, identification, phone, address, city}})
+        Cookies.set('shippingAddress', JSON.stringify({name, identification, phone, address, city}));
         router.push('/payment')
     }
 
@@ -37,23 +55,23 @@ export default function Shipping() {
         
            <div className="form-group">
                <label htmlFor="">NOMBRE</label>
-               <input type="text" value={name.toUpperCase()} onChange={e => setName(e.target.value)} />
+               <input type="text" value={name.toUpperCase()} onChange={(e) => setName(e.target.value)} />
            </div>
            <div className="form-group">
                <label htmlFor="">CEDULA</label>
-               <input type="number" value={identification.toUpperCase()} onChange={e => setIdentification(e.target.value)} />
+               <input type="number" value={identification.toUpperCase()} onChange={(e) => setIdentification(e.target.value)} />
            </div>
            <div className="form-group">
                <label htmlFor="">TELEFONO</label>
-               <input type="number" value={phone} onChange={e => setPhone(e.target.value)} />
+               <input type="number" value={phone} onChange={e => setPhone((e).target.value)} />
            </div>
            <div className="form-group">
                <label htmlFor="">DIRECCION</label>
-               <input type="text" value={address.toUpperCase()} onChange={e => setAddress(e.target.value)} />
+               <input type="text" value={address.toUpperCase()} onChange={(e) => setAddress(e.target.value)} />
            </div>
            <div className="form-group">
                <label htmlFor="">CIUDAD</label>
-               <input type="text" value={city.toUpperCase()} onChange={e => setCity(e.target.value)} />
+               <input type="text" value={city.toUpperCase()} onChange={(e) => setCity(e.target.value)} />
            </div>
            <div className="form-group-btn">
                <input type="submit" value="Continuar" />

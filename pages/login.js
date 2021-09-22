@@ -24,11 +24,9 @@ export default function Login() {
         e.preventDefault();
         try{
             const {data} = await axios.post('http://rveapi.herokuapp.com/api/v1/admins/signin', {username, password})
-            const data2 = await axios.post('http://rveapi.herokuapp.com/api/v1/admins/signin', {username, password})
-            console.log()
-            console.log(data2)
+
             dispatch({type: 'USER_LOGIN', payload: data});
-            Cookies.set('userInfo', Object.values(data))
+            Cookies.set('userInfo', JSON.stringify(data))
             router.push(redirect || '/')
         }catch(err){
             alert(err)
