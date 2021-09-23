@@ -7,27 +7,30 @@ import swal from 'sweetalert'
 
 export default function Payment() {
     const router = useRouter();
-    const [paymentMethod, setPaymentMethod] = useState('')
+    const [paymentMethod, setPaymentMethod] = useState('MercadoPago')
     const {state, dispatch} = useContext(Store);
     const { cart: {shippingAddress}, } = state;
-    useEffect(() => {
-        if(!shippingAddress.address){
-            router.push('/shipping');
-        }else{
-            setPaymentMethod(Cookies.get('paymentMethod') || '')
-        }
-    }, [])
+    // useEffect(() => {
+    //     if(!shippingAddress){
+    //         router.push('/shipping');
+    //     }else{
+    //         setPaymentMethod(Cookies.get('paymentMethod') || '')
+    //     }
+    // }, [])
 
     const submitHandler = (e) => {
         e.peventDefault();
-        if(!paymentMethod){
-            swal("El metodo de pago es requerido", "Selecciona uno!", "error");
-            return;
-        }else{
+
+        // console.log(1)
+        // if(!paymentMethod){
+        //     console.log(2)
+        //     swal("El metodo de pago es requerido", "Selecciona uno!", "error");
+        // }else{
+            console.log(3)
             dispatch({ type: 'SAVE_PAYMENT_METHOD', payload: paymentMethod });
             Cookies.set('paymentMethod', JSON.stringify(paymentMethod));
             router.push('/placeorder');
-        }
+        // }
     }
     return (
         <Layout title="Metodo de Pago">
@@ -38,11 +41,11 @@ export default function Payment() {
 
                 <div className="form-group">
                     <label htmlFor="">MercadoPago (Tarjeta de Credito/PSE/Tarjeta de Debito)</label>
-                    <input type="radio" />
+                    <input type="radio" name="paymentMethod" value="MercadoPago" onChange={(e) => setPaymentMethod(e.target.value)} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="">Bancolombia </label>
-                    <input type="radio" />
+                    <input type="radio" name="paymentMethod" value="Bancolombia" onChange={(e) => setPaymentMethod(e.target.value)} />
                 </div>
                 <div className="form-group-btn">
                <input type="submit" value="Continuar" />

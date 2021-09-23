@@ -8,11 +8,10 @@ import axios from "axios";
 import { useContext } from "react";
 import { Store } from "../../utils/Store";
 
-export default function ProductScreen() {
-    const {state, dispatch} = useContext(Store);
+export default function ProductScreen(props) {
     const router = useRouter();
-    const {slug} = router.query;
-    const computer = data.computers.find(a => a.slug === slug)
+    const {state, dispatch} = useContext(Store);
+    const {computer} = props;
 
     if(!computer){
         return <div>Computer Not found</div>
@@ -48,17 +47,15 @@ export default function ProductScreen() {
                     <h2>{computer.name}</h2>
                     <h4>Un salto al siguiente nivel.</h4>
                     <div className={styles.imgcontainer}>
-                        <Image src={computer.image} alt={computer.name} width={'200%'} height={'200%'}/>
+                        {/* <Image src={computer.image} alt={computer.name} width={'200%'} height={'200%'}/> */}
+                        <img src={computer.image} alt={computer.name} width={'200%'} height={'200%'}/>
                     </div>
                 </div>
                 <div className={styles.details}>
                     <ul>
-                        <li className={styles.detailsItem}><img className={styles.icon} src="../images/icons/cpu.png" alt="" /> {computer.cpu}</li>
-                        <li className={styles.detailsItem}><img className={styles.icon} src="../images/icons/motherboard.png" alt="" />  {computer.motherboard}</li>
-                        <li className={styles.detailsItem}><img className={styles.icon} src="../images/icons/ram.png" alt="" /> {computer.ram}</li>
-                        <li className={styles.detailsItem}><img className={styles.icon} src="../images/icons/ssd-drive.png" alt="" /> {computer.ssd}</li>
-                        <li className={styles.detailsItem}><img className={styles.icon} src="../images/icons/hdd.png" alt="" /> {computer.hdd}</li>
-                        <li className={styles.detailsItem}><img className={styles.icon} src="../images/icons/gpu.png" alt="" />  {computer.gpu}</li>
+                        {computer.specs.map((spec) => (
+                            <li key={spec._id} className={styles.detailsItem}><img className={styles.icon} src="../images/icons/cpu.png" alt="" /> {spec.name}</li>
+                        ))}
                     </ul>
                 </div>
                 <div className={styles.gamescontainer}>
@@ -78,3 +75,21 @@ export default function ProductScreen() {
 
     )
 }
+
+export async function getServerSideProps(context){
+    const {params} = context;
+    const {_id} = params;
+console.log(_id)
+    try{
+  
+      const res = await fetch(`http://rveapi.herokuapp.com/api/v1/computers${_id}`)
+      const data = await res.json()
+      console.log(data)
+      return {
+        props: {computer: data},
+      }
+    }catch(err){
+      console.log(err)
+    }
+  }
+  

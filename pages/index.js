@@ -12,6 +12,8 @@ import { useState } from 'react'
 export default function Home({computers}) {
   
   const [type, setType] = useState('gamer');
+
+
   return (
     <Layout>
       <div className="container">
@@ -59,27 +61,23 @@ export default function Home({computers}) {
           </>
           : type === 'gamer'?
           <>
-          {data.computers.map((computer) => (
-            <div className={card.card} key={computer.id}>
-              <Link href={`/computer/${computer.slug}`} passHref>
+          {computers.map((computer) => (
+            <div className={card.card} key={computer._id}>
+              <Link href={`/computer/${computer._id}`} passHref>
                 <a>
 
               <div >
-                <img src={computer.image} alt="" />
+                <img src={computer.image} alt={computer.name} />
               </div>
               <div>
                 <div className={card.header}>
                   <h2>{computer.name}</h2>
                   <p>{computer.price}</p>
                 </div>
-
                 <ul>
-                  <li><img className={styles.icon} src="./images/icons/cpu.png" alt="" /> {computer.cpu}</li>
-                  <li><img className={styles.icon} src="./images/icons/motherboard.png" alt="" /> {computer.motherboard}</li>
-                  <li><img className={styles.icon} src="./images/icons/ram.png" alt="" /> {computer.ram}</li>
-                  <li><img className={styles.icon} src="./images/icons/ssd-drive.png" alt="" /> {computer.ssd}</li>
-                  <li><img className={styles.icon} src="./images/icons/hdd.png" alt="" /> {computer.hdd}</li>
-                  <li><img className={styles.icon} src="./images/icons/gpu.png" alt="" /> {computer.gpu}</li>
+                {computer.specs.map((spec) => (
+                  <li key={spec._id}><img className={styles.icon} src="/images/icons/cpu.png" alt="" /> {spec.name}</li>  
+                  ))}
                 </ul>
                 <button className={card.button}>Anadir al carrito</button>    
               </div>
@@ -157,16 +155,16 @@ export default function Home({computers}) {
   )
 }
 
-// export async function getStaticProps(){
-//   try{
+export async function getStaticProps(){
+  try{
 
-//     const res = await fetch('http://rveapi.herokuapp.com/api/v1/computers')
-//     const data = await res.json()
-//   console.log(data)
-//     return {
-//       props: {computers: data.computers},
-//     }
-//   }catch(err){
-//     console.log(err)
-//   }
-// }
+    const res = await fetch('http://rveapi.herokuapp.com/api/v1/computers')
+    const data = await res.json()
+  console.log(data)
+    return {
+      props: {computers: data.computers},
+    }
+  }catch(err){
+    console.log(err)
+  }
+}
