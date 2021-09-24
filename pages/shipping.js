@@ -24,11 +24,11 @@ export default function Shipping() {
     }
 
     if (shippingAddres) {
-      setName(shippingAddres.name);
+      setName(shippingAddres.name.toUpperCase());
       setIdentification(shippingAddres.identification);
       setPhone(shippingAddres.phone);
-      setAddress(shippingAddres.address);
-      setCity(shippingAddres.city);
+      setAddress(shippingAddres.address.toUpperCase());
+      setCity(shippingAddres.city.toUpperCase());
     }
   }, []);
 

@@ -65,7 +65,7 @@ export default function Placeorder() {
         <div className="card_body">
           <ul>
             <li>
-              <span>Nombre:</span> {shippingAddress.name.toUpperCase()}
+              <span>Nombre:</span> {shippingAddress.name}
             </li>
             <li>
               <span>Cedula:</span> {shippingAddress.identification}
@@ -74,10 +74,10 @@ export default function Placeorder() {
               <span>Telefono:</span> {shippingAddress.phone}
             </li>
             <li>
-              <span>Direccion:</span> {shippingAddress.address.toUpperCase()}
+              <span>Direccion:</span> {shippingAddress.address}
             </li>
             <li>
-              <span>Ciudad:</span> {shippingAddress.city.toUpperCase()}
+              <span>Ciudad:</span> {shippingAddress.city}
             </li>
           </ul>
           {shippingAddress.addres}
