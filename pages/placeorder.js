@@ -13,7 +13,7 @@ export default function Placeorder() {
     cart: { cartItems, shippingAddress, paymentMethod },
   } = state;
 
-  const shippAddres = JSON.parse(shippingAddress);
+  // const shippAddres = JSON.parse(shippingAddress);
   const round2 = (num) => Math.round(num * 100 + Number.EPSILON) / 100;
   const itemsPrice = round2(
     cartItems.reduce((a, c) => a + c.price * c.quantity, 0)
@@ -65,19 +65,19 @@ export default function Placeorder() {
         <div className="card_body">
           <ul>
             <li>
-              <span>Nombre:</span> {shippAddres.name.toUpperCase()}
+              <span>Nombre:</span> {shippingAddress.name.toUpperCase()}
             </li>
             <li>
-              <span>Cedula:</span> {shippAddres.identification}
+              <span>Cedula:</span> {shippingAddress.identification}
             </li>
             <li>
-              <span>Telefono:</span> {shippAddres.phone}
+              <span>Telefono:</span> {shippingAddress.phone}
             </li>
             <li>
-              <span>Direccion:</span> {shippAddres.address.toUpperCase()}
+              <span>Direccion:</span> {shippingAddress.address.toUpperCase()}
             </li>
             <li>
-              <span>Ciudad:</span> {shippAddres.city.toUpperCase()}
+              <span>Ciudad:</span> {shippingAddress.city.toUpperCase()}
             </li>
           </ul>
           {shippingAddress.addres}
