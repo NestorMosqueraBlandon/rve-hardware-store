@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import DivisaFormater from '../components/DivisaFormater';
 import Layout from '../components/Layout';
 import { Store } from '../utils/Store';
+import Cookies from 'js-cookie';
 
 export default function Placeorder() {
   const router = useRouter();
@@ -24,12 +25,20 @@ export default function Placeorder() {
 
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    if (!paymentMethod) {
+      router.push('/payment');
+    }
+  }, []);
+
   const placeOrderHandler = async () => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        'https://rveapi.herokuapp.com/api/v1/orders',
+        // 'https://rveapi.herokuapp.com/api/v1/orders',
+        'http://localhost:4000/api/v1/orders',
         {
+          user: userInfo,
           orderItems: cartItems,
           shippingAddress,
           paymentMethod,
@@ -46,6 +55,7 @@ export default function Placeorder() {
       );
       dispatch({ type: 'CART_CLEAR' });
       Cookies.remove('cartItems');
+
       setLoading(false);
       router.push(`/order/${data._id}`);
     } catch (err) {
@@ -151,7 +161,9 @@ export default function Placeorder() {
         </div>
       </div>
       <div className="card-button last-item">
-        <button className="btn">CONTINUAR</button>
+        <button onClick={placeOrderHandler} className="btn">
+          CONTINUAR
+        </button>
       </div>
     </Layout>
   );

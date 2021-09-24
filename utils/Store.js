@@ -16,9 +16,7 @@ const initialState = {
       : '',
   },
 
-  userInfo: Cookies.get('userInfo')
-    ? JSON.stringify(Cookies.get('userInfo'))
-    : null,
+  userInfo: Cookies.get('userInfo') ? Cookies.get('userInfo') : null,
 };
 
 function reducer(state, action) {

@@ -18,15 +18,18 @@ export default function Login() {
     }
   }, []);
 
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const submitHandler = async (e) => {
     e.preventDefault();
+    console.log('entro');
     try {
       const { data } = await axios.post(
-        'https://rveapi.herokuapp.com/api/v1/admins/signin',
-        { username, password }
+        'https://rveapi.herokuapp.com/api/v1/users/signin',
+        { email, password }
       );
+
+      console.log(data);
 
       dispatch({ type: 'USER_LOGIN', payload: data });
       Cookies.set('userInfo', JSON.stringify(data));
@@ -44,9 +47,9 @@ export default function Login() {
         <div className="form-group">
           <label htmlFor="">CORREO/USUARIO</label>
           <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="form-group">
