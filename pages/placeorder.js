@@ -24,8 +24,6 @@ export default function Placeorder() {
 
   const [loading, setLoading] = useState(false);
 
-  console.log(shippAddres);
-
   const placeOrderHandler = async () => {
     try {
       setLoading(true);
