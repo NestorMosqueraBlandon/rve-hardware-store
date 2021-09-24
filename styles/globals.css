@@ -1,15 +1,15 @@
-html{
+html {
   font-size: 62.5%;
 }
 
-body{
+body {
   font-size: 1.6rem;
 }
 
 html,
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #07060A;
+  background-color: #07060a;
   color: #f2f6fa;
 }
 
@@ -24,7 +24,7 @@ a {
   padding: 0;
 }
 
-.center{
+.center {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,37 +37,35 @@ a {
   padding-top: 50px;
   width: 100%;
   margin: 0 auto;
-  
 }
 
-.main{
+.main {
   min-height: 85vh;
 }
 
-.container{
-  background-color: #07060A;
+.container {
+  background-color: #07060a;
   padding: 20px;
   text-align: center;
 }
 
-img{
+img {
   width: 100%;
   object-fit: cover;
 }
 
-main{
+main {
   margin: 0;
 }
 
-.centerImg{
+.centerImg {
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 800px;
-
 }
 
-details{
+details {
 }
 
 details > summary {
@@ -82,20 +80,17 @@ details > summary i {
   font-size: 30px;
 }
 
-
 details > summary::before {
   content: '▶️';
   display: none;
 }
 
-
 details > summary::-webkit-details-marker {
   display: none;
 }
 
-summary{
+summary {
   outline: none;
-
 }
 
 a {
@@ -109,7 +104,7 @@ a {
   padding: 0;
 }
 
-.center{
+.center {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,53 +117,49 @@ a {
   padding-top: 50px;
   width: 100%;
   margin: 0 auto;
-  
 }
 
-.main{
+.main {
   min-height: 85vh;
 }
 
-.container{
-  background-color: #07060A;
+.container {
+  background-color: #07060a;
   padding: 20px;
   text-align: center;
 }
 
-img{
+img {
   width: 100%;
   object-fit: cover;
 }
 
-main{
+main {
   margin: 0;
 }
 
-.centerImg{
+.centerImg {
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 800px;
-
 }
 
 details {
-  transition:height 3s ease-in;
+  transition: height 3s ease-in;
 }
 
 details summary ~ * {
-  animation: sweep .5s ease-in-out;
+  animation: sweep 0.5s ease-in-out;
 }
 
-details:not([open]) summary ~ *
-{
-  animation: nosweep .5s ease-in-out;
-    
+details:not([open]) summary ~ * {
+  animation: nosweep 0.5s ease-in-out;
 }
 
-.btnmonitor{
+.btnmonitor {
   border: none;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 5px;
   background-color: dodgerblue;
   color: #f2f6fa;
@@ -176,17 +167,29 @@ details:not([open]) summary ~ *
 }
 
 details[open] summary ~ * {
-  animation: sweep .5s ease-in-out;
+  animation: sweep 0.5s ease-in-out;
 }
 
 @keyframes sweep {
-  0%    {opacity: 0; margin-left: -10px}
-  100%  {opacity: 1; margin-left: 0px}
+  0% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px;
+  }
 }
 
 @keyframes nosweep {
-  0%    {opacity: 1; margin-left: 0px}
-  100%  {opacity: 0; margin-left: -10px}
+  0% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+  100% {
+    opacity: 0;
+    margin-left: -10px;
+  }
 }
 details > summary {
   list-style-type: none;
@@ -208,7 +211,7 @@ details ul {
 }
 
 details ul li:first-child {
-  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 details ul li {
@@ -219,94 +222,90 @@ details > summary i {
   font-size: 30px;
 }
 
-
 details > summary::before {
   content: '▶️';
   display: none;
   transition: 1s;
 }
 
-
 details > summary::-webkit-details-marker {
   display: none;
 }
 
-summary{
+summary {
   outline: none;
-
 }
 
-.cart-card{
+.cart-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 20px;
   padding: 10px;
 }
 
-.cart-card .content{
+.cart-card .content {
   display: flex;
   flex-direction: column;
 }
 
-.menu{
+.menu {
   position: fixed;
   bottom: 0;
   left: 0;
   height: 40px;
   width: 100%;
-  border-top: 1px solid rgba(255, 255, 255, .1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0;
   padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #07060A;
+  background-color: #07060a;
   padding: 2.5rem;
 }
 
-.menu a{
+.menu a {
   font-size: 2.4rem;
 }
 
-.title-cart{
+.title-cart {
   font-size: 1.4rem;
   padding: 1rem 2rem;
   padding-bottom: 0;
   font-weight: 600;
 }
 
-.cart-card .img{
-  width:100px;
+.cart-card .img {
+  width: 100px;
 }
 
-.cart-item{
-
-  border: 1px solid rgba(255, 255, 255, .1);
+.cart-item {
+  border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 20px;
   padding: 10px;
   margin-bottom: 5px;
 }
 
-.cart-item h3{
+.cart-item h3 {
   font-size: 1.4rem;
   font-weight: 600;
 }
 
-.cart-item-name{
+.cart-item-name {
   font-size: 1.2rem;
   text-transform: capitalize;
 }
 
-.content-footer button{
+.content-footer button {
   background-color: transparent;
   border: none;
   color: #f2f6fa;
   font-size: 1.8rem;
 }
 
-.cart-footer{
+.cart-footer {
   position: absolute;
   bottom: 50px;
   left: 0;
@@ -318,18 +317,18 @@ summary{
   width: 100%;
 }
 
-.cart-footer button{
+.cart-footer button {
   font-size: 2rem;
   border: none;
-border-radius: 5px;
-/* padding: 2rem; */
-height: 40px;
-width: 40px;
-background-color: royalblue;
-color: #f2f6fa;
+  border-radius: 5px;
+  /* padding: 2rem; */
+  height: 40px;
+  width: 40px;
+  background-color: royalblue;
+  color: #f2f6fa;
 }
 
-form{
+form {
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -340,29 +339,29 @@ form{
   padding: 1.5rem;
 }
 
-form h2{
+form h2 {
   font-weight: 500;
   margin-bottom: 2.5rem;
 }
 
-form p{
+form p {
   font-size: 1.4rem;
   font-weight: 300;
   margin-bottom: 2.5rem;
 }
 
-.form-group{
+.form-group {
   width: 100%;
   height: 50px;
-  padding: .5rem;
+  padding: 0.5rem;
   margin: 1rem;
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
 }
 
-.form-group input{
+.form-group input {
   width: 100%;
   height: 100%;
   background-color: transparent;
@@ -370,29 +369,29 @@ form p{
   outline: none;
   padding: 1rem;
   color: #f2f6fa;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
 }
 
-.form-group label{
-  font-size: .8rem;
-  letter-spacing: .1rem;
+.form-group label {
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
   padding: 0 1rem;
-  color: rgba(255, 255, 255, .4);
+  color: rgba(255, 255, 255, 0.4);
 }
 
-.form-group-btn{
+.form-group-btn {
   width: 100%;
   height: 50px;
-  padding: .5rem;
+  padding: 0.5rem;
   margin: 1rem;
-  background-color: rgba(255, 255, 255, .1);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: royalblue;
 }
-.form-group-btn input{
+.form-group-btn input {
   width: 100%;
   height: 100%;
   background-color: transparent;
@@ -404,30 +403,119 @@ form p{
   font-size: 1.4rem;
 }
 
-.form-group input[type="radio"]{
-
+.form-group input[type='radio'] {
   width: 40px;
   margin: 2px;
 }
 
-.login-register{
+.login-register {
   font-size: 1.4rem;
   font-weight: 300;
   margin-bottom: 2.5rem;
   text-align: center;
   margin-top: 4rem;
-  color: rgba(255, 255, 255, .3);
+  color: rgba(255, 255, 255, 0.3);
 }
 
-.profile-name a{
+.profile-name a {
   font-size: 1.2rem;
 }
 
-.special-text{
+.special-text {
   color: royalblue;
 }
+
+h2 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+
+p {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
 @media screen and (min-width: 500px) {
-  form{
+  form {
     max-width: 450px;
   }
+}
+
+.card {
+  margin: 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 15px;
+}
+
+.card_title {
+  font-size: 1rem;
+}
+
+.card_title h2 {
+  margin-bottom: 1rem;
+}
+
+.card_body {
+  font-size: 1.2rem;
+}
+
+.card_body li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  font-weight: 100;
+}
+
+.card .title-cart {
+  margin: 0;
+}
+
+.card summary {
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cart-card {
+  margin: 0;
+}
+
+.card_body li span {
+  overflow: hidden;
+  width: 55px;
+  text-align: right;
+  margin-right: 1.1rem;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+}
+
+.summary-items {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+}
+
+.last-item {
+  margin-bottom: 7rem;
+}
+
+.card-button {
+  padding: 0 10px;
+}
+.btn {
+  background-color: royalblue;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  height: 50px;
+  color: #f2f6fa;
+  font-weight: 500;
+  font-size: 1.6rem;
 }
