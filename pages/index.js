@@ -16,10 +16,22 @@ import Layout from '../components/Layout';
 import styles from '../styles/Home.module.css';
 import card from '../styles/Card.module.css';
 import data from '../utils/data.js';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { Store } from '../utils/Store';
+import { useRouter } from 'next/router';
+import DivisaFormater from '../components/DivisaFormater';
 
 export default function Home({ computers }) {
+  const router = useRouter();
+  const { state, dispatch } = useContext(Store);
+
   const [type, setType] = useState('gamer');
+
+  const addToCartHandler = (computer) => {
+    console.log('rest');
+    dispatch({ type: 'CART_ADD_ITEM', payload: { ...computer, quantity: 1 } });
+    router.push('/cart');
+  };
 
   return (
     <Layout>
@@ -58,7 +70,7 @@ export default function Home({ computers }) {
         <div className={styles.grid}>
           {type === 'workstation' ? (
             <>
-              {data.workstations.map((computer) => (
+              {/* {data.workstations.map((computer) => (
                 <div className={card.card} key={computer.id}>
                   <div>
                     <img src={computer.image} alt="" />
@@ -118,10 +130,16 @@ export default function Home({ computers }) {
                         {computer.gpu}
                       </li>
                     </ul>
-                    <button className={card.button}>Anadir al carrito</button>
+                    <button
+                      onClick={() => addToCartHandler()}
+                      className={card.button}
+                    >
+                      Anadir al carrito
+                    </button>
                   </div>
                 </div>
-              ))}
+              ))} */}
+              <h2>No hay productos</h2>
             </>
           ) : type === 'gamer' ? (
             <>
@@ -135,7 +153,9 @@ export default function Home({ computers }) {
                       <div>
                         <div className={card.header}>
                           <h2>{computer.name}</h2>
-                          <p>{computer.price}</p>
+                          <p className="item-price">
+                            <DivisaFormater value={computer.price} />
+                          </p>
                         </div>
                         <ul>
                           {computer.specs.map((spec) => (
@@ -149,18 +169,21 @@ export default function Home({ computers }) {
                             </li>
                           ))}
                         </ul>
-                        <button className={card.button}>
-                          Anadir al carrito
-                        </button>
                       </div>
                     </a>
                   </Link>
+                  <button
+                    onClick={() => addToCartHandler(computer)}
+                    className={card.button}
+                  >
+                    Añadir al carrito
+                  </button>
                 </div>
               ))}
             </>
           ) : (
             <>
-              {data.notebooks.map((computer) => (
+              {/* {data.notebooks.map((computer) => (
                 <div className={card.card} key={computer.id}>
                   <div>
                     <img src={computer.image} alt="" />
@@ -223,7 +246,8 @@ export default function Home({ computers }) {
                     <button className={card.button}>Anadir al carrito</button>
                   </div>
                 </div>
-              ))}
+              ))} */}
+              <h2>No hay productos</h2>
             </>
           )}
         </div>

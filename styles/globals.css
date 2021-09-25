@@ -129,11 +129,6 @@ a {
   text-align: center;
 }
 
-img {
-  width: 100%;
-  object-fit: cover;
-}
-
 main {
   margin: 0;
 }
@@ -286,6 +281,7 @@ summary {
   margin: 20px;
   padding: 10px;
   margin-bottom: 5px;
+  max-width: 500px;
 }
 
 .cart-item h3 {
@@ -303,6 +299,10 @@ summary {
   border: none;
   color: #f2f6fa;
   font-size: 1.8rem;
+}
+
+.cart-card {
+  max-width: 500px;
 }
 
 .cart-footer {
@@ -441,6 +441,10 @@ p {
   form {
     max-width: 450px;
   }
+
+  .menu {
+    display: none;
+  }
 }
 
 .card {
@@ -518,4 +522,22 @@ ul {
   color: #f2f6fa;
   font-weight: 500;
   font-size: 1.6rem;
+}
+
+.profile-name {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.profile-name i {
+  margin-right: 0.5rem;
+}
+
+.main .center {
+  padding: 0;
+}
+
+.item-price {
+  font-size: 1.8rem;
 }

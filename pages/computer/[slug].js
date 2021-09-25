@@ -41,18 +41,15 @@ export default function ProductScreen(props) {
           </ul>
         </details>
       </div>
+      <div className={styles.title}>
+        <h2>{computer.name}</h2>
+        <h4>Un salto al siguiente nivel.</h4>
+      </div>
       <div className={styles.container}>
         <div className={styles.hero}>
-          <h2>{computer.name}</h2>
-          <h4>Un salto al siguiente nivel.</h4>
           <div className={styles.imgcontainer}>
             {/* <Image src={computer.image} alt={computer.name} width={'200%'} height={'200%'}/> */}
-            <img
-              src={`../${computer.image}`}
-              alt={computer.name}
-              width={'200%'}
-              height={'200%'}
-            />
+            <img src={`../${computer.image}`} alt={computer.name} />
           </div>
         </div>
         <div className={styles.details}>
@@ -69,7 +66,9 @@ export default function ProductScreen(props) {
             ))}
           </ul>
         </div>
-        <div className={styles.gamescontainer}>
+      </div>
+      <div className={styles.container}>
+        <div className={`last-item ${styles.gamescontainer}`}>
           <h2>Juegos Recomendados</h2>
           <div className={styles.line}></div>
           <ul className={styles.games}>
