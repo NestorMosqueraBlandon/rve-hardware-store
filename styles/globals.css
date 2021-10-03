@@ -541,3 +541,8 @@ ul {
 .item-price {
   font-size: 1.8rem;
 }
+
+button{
+  cursor: pointer;
+  outline: none;
+}
