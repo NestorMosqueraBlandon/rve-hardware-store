@@ -299,7 +299,7 @@ export default function Home({ computers }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   try {
     const res = await fetch('https://rveapi.herokuapp.com/api/v1/computers');
     const data = await res.json();
