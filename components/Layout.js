@@ -1,14 +1,15 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from 'next/link';
+
 import useStyles from '../utils/styles';
-import Header from '../styles/Header.module.css';
-import logo from '../public/images/logo.svg';
+import Styles from '../styles/Header.module.css';
+
 import Cookies from 'js-cookie';
 
 import { Store } from '../utils/Store';
 import { useContext } from 'react';
 import Menu from './Menu';
+import Header from './Header';
 
 export default function Layout({ title, children }) {
   const { state, dispatch } = useContext(Store);
@@ -33,51 +34,7 @@ export default function Layout({ title, children }) {
           rel="stylesheet"
         />
       </Head>
-      <header className={Header.header}>
-        <div>
-          {/* <div className={Header.menu}></div> */}
-          {/* <div className={Header.menu}></div> */}
-        </div>
-        <Link href="/" passHref>
-          <a>
-            <Image src={logo} alt="Logo RVE HARDWARE" />
-          </a>
-        </Link>
-        <div className={Header.left}>
-          {userInfo ? (
-            <Link href="/profile" className="profile-name">
-              <a> {userInfo.name}</a>
-            </Link>
-          ) : (
-            <span></span>
-          )}
-        </div>
-      </header>
-      <header className={Header.desktop}>
-        <Link href="/" passHref>
-          <a>
-            <Image src={logo} alt="Logo RVE HARDWARE" />
-            Real Vision Hardware
-          </a>
-        </Link>
-        {/* <div>
-          <Link href="/">
-            <a>Tienda</a>
-          </Link>
-        </div> */}
-
-        <div className={Header.left}>
-          {userInfo ? (
-            <Link href="/profile" className="profile-name">
-              <a> {userInfo.name}</a>
-            </Link>
-          ) : (
-            <span className="profile-name">
-              <i className="bx bxs-user"></i> Iniciar sesion
-            </span>
-          )}
-        </div>
-      </header>
+      <Header logo="./img/logo/logo.svg" />
       <main className="main">{children}</main>
       {/* <footer className={Header.footer}>
                 <p>

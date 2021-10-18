@@ -22,14 +22,12 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log('entro');
     try {
       const { data } = await axios.post(
         'https://rveapi.herokuapp.com/api/v1/users/signin',
         { email, password }
       );
 
-      console.log(data);
 
       dispatch({ type: 'USER_LOGIN', payload: data });
       Cookies.set('userInfo', JSON.stringify(data));

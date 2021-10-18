@@ -34,11 +34,6 @@ export default function Shipping() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(name);
-    console.log(identification);
-    console.log(phone);
-    console.log(address);
-    console.log(city);
     dispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
       payload: { name, identification, phone, address, city },

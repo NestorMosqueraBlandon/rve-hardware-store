@@ -28,7 +28,6 @@ export default function Home({ computers }) {
   const [type, setType] = useState('gamer');
 
   const addToCartHandler = (computer) => {
-    console.log('rest');
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...computer, quantity: 1 } });
     router.push('/cart');
   };
@@ -303,7 +302,6 @@ export async function getServerSideProps() {
   try {
     const res = await fetch('https://rveapi.herokuapp.com/api/v1/computers');
     const data = await res.json();
-    console.log(data);
     return {
       props: { computers: data.computers },
     };

@@ -49,7 +49,7 @@ export default function ProductScreen(props) {
         <div className={styles.hero}>
           <div className={styles.imgcontainer}>
             {/* <Image src={computer.image} alt={computer.name} width={'200%'} height={'200%'}/> */}
-            <img src={`../${computer.image}`} alt={computer.name} />
+            <img src={`${computer.image}`} alt={computer.name} />
           </div>
         </div>
         <div className={styles.details}>

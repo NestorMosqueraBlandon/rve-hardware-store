@@ -1,0 +1,44 @@
+        <header className={Header.header}>
+        <div>
+          {/* <div className={Header.menu}></div> */}
+          {/* <div className={Header.menu}></div> */}
+        </div>
+        <Link href="/" passHref>
+          <a>
+            <Image src={logo} alt="Logo RVE HARDWARE" />
+          </a>
+        </Link>
+        <div className={Header.left}>
+          {userInfo ? (
+            <Link href="/profile" className="profile-name">
+              <a> {userInfo.name}</a>
+            </Link>
+          ) : (
+            <span></span>
+          )}
+        </div>
+      </header>
+      <header className={Header.desktop}>
+        <Link href="/" passHref className={Header.logo} >
+          <a>
+            <Image src={logo} alt="Logo RVE HARDWARE" />
+          </a>
+        </Link>
+        {/* <div>
+          <Link href="/">
+            <a>Tienda</a>
+          </Link>
+        </div> */}
+
+        <div className={Header.left}>
+          {userInfo ? (
+            <Link href="/profile" className="profile-name">
+              <a> {userInfo.name}</a>
+            </Link>
+          ) : (
+            <span className="profile-name">
+              <i className="bx bxs-user"></i> Iniciar sesion
+            </span>
+          )}
+        </div>
+      </header>
