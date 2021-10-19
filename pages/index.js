@@ -146,7 +146,7 @@ export default function Home({ computers }) {
                 <div className={card.card} key={computer._id}>
                   <Link href={`/computer/${computer._id}`} passHref>
                     <a>
-                      <div>
+                      <div className={card.picture}>
                         <img src={computer.image} alt={computer.name} />
                       </div>
                       <div>

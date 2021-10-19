@@ -126,6 +126,7 @@
 
 .details{
   cursor: pointer;
+  position: relative;
 }
 
 .details summary{
@@ -141,10 +142,32 @@
   padding: 1rem;
 }
 
+
+.details ul li a:hover{
+  color: #4169e1;
+}
+
 .details ul li:first-child {
   border-bottom: none;
 }
 
+.details .detaillist{
+  position: absolute;
+  left: 10px;
+  transition: .5s;
+  color: transparent;
+  z-index: -999;
+  top: -50px;
+}
+
+.details .detaillistopen{
+  position: relative;
+  top: 20px;
+  left: 10px;
+  /* margin-top: 1rem; */
+  transition: .5s;
+  /* display: none; */
+}
 
 @media screen and (min-width: 900px) {
 
@@ -238,6 +261,53 @@
     
     .logomobile{
         display: none;
+    }
+
+    .details .detaillist{
+      position: absolute;
+      left: 10px;
+      transition: .5s;
+      color: transparent;
+      z-index: -999;
+      top: -50px;
+    }
+    
+    .details .detaillistopen{
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      /* margin-top: 1rem; */
+      transition: .5s;
+      /* display: none; */
+    }
+    
+    .details .detaillistopen ul li{
+      /* margin: 1rem 0; */
+      padding: 0;
+    }
+    
+    
+    .details .detaillistopen ul li:first-child{
+      
+      margin-top: 1rem;
+      
+    }
+    
+    
+    .details .detaillistopen ul{
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      gap: 1rem;
+    }
+    
+    .details .detaillist ul{
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      gap: 1rem;
     }
 
 }

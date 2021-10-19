@@ -113,6 +113,53 @@
   margin: 6px 0;
 }
 
+.headerpage{
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+.headerpage h1{
+  font-weight: 600;
+}
+
+.headerpage p{
+  text-align: left;
+  margin-top: .5rem;
+}
+
+.carousel{
+  padding: 0 1rem;
+  display: flex;
+  width: 100%;
+  overflow: scroll;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.carouselitem{
+  min-width: 180px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.carouselitem .picture{
+  width: 150px;
+  overflow: hidden;
+  border-radius: .5rem;
+  object-fit: cover;
+}
+
+.carouselitem .picture img{
+  border-radius: .5rem;
+}
+
+.carouselitem h2{
+  text-align: left;
+  font-size: 1.4rem;
+  max-width: 170px;
+  padding-left: 1.3rem;
+}
 @media screen and (min-width: 500px) {
   .container {
     display: flex;

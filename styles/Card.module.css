@@ -63,3 +63,8 @@
   left: calc(50% - 60px);
   color: #f2f6fa;
 }
+
+.picture{
+  width: 150px;
+  object-fit: cover;
+}

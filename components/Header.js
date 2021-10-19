@@ -5,6 +5,7 @@ import styles from '../styles/Header.module.css'
 export default function Header({logo}) {
     const [openMenu, setOpenMenu] = useState(false)
 
+    const [openList, setOpenList] = useState(false)
     
     return (
         <header className={styles.header}>
@@ -27,16 +28,19 @@ export default function Header({logo}) {
                         <li> <Link href="/"><a> Inicio </a></Link> </li>
                         <li> 
                             
-                            <details className={styles.details}>
-                                <summary>
+                            <div className={styles.details}>
+                                <div className={styles.detailtitle} onClick={() => setOpenList(!openList)}>
                                     Computadoras
-                                </summary>
-                                <ul>
-                                    <li><Link href="/"><a> PC Gaming </a></Link></li>
+                                </div>
+                                <div className={openList? styles.detaillistopen : styles.detaillist}>
+                                    <ul>
+                                    <li><Link href="/pcgamer"><a> PC Gaming </a></Link></li>
                                     <li><Link href="/"><a> Mini PC</a></Link></li>
                                     <li><Link href="/"><a> Portatiles</a></Link></li>
-                                </ul>
-                            </details>
+                                    </ul>
+
+                                </div>
+                            </div>
                             
                             {/* <Link href="/"><a> Computadores </a></Link>  */}
                             </li>

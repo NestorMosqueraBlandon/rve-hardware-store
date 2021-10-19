@@ -44,7 +44,7 @@ export default function Layout({ title, children }) {
                     <li></li>
                 </ul>
             </footer> */}
-      <Menu />
+      {/* <Menu /> */}
     </>
   );
 }
