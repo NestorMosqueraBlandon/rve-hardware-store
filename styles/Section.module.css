@@ -125,6 +125,7 @@
 .headerpage p{
   text-align: left;
   margin-top: .5rem;
+  max-width: 600px;
 }
 
 .carousel{
@@ -133,6 +134,8 @@
   width: 100%;
   overflow: scroll;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
 
 .carouselitem{

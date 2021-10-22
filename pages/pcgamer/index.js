@@ -22,6 +22,7 @@ export default function PcGamer({ computers }) {
     return (
         <Layout>
             
+            <div className="grid">
             <div className={styles.headerpage}>
                 <h1>PC GAMER</h1>
                 <p>Compra las mejores PC Gamer armadas con tarjeta de video NVIDIA o RADEON, y procesadorres Intel o Ryzen. Enviamos tu computadora a todo Colombia</p>
@@ -55,12 +56,48 @@ export default function PcGamer({ computers }) {
                 </div>
                 <div className={styles.carouselitem}>
                     <div className={styles.picture}>
-                    <img src="/images/games-cover/pcg-fortnite2.webp" alt="" />
+                    <img src="/images/games-cover/pcg-4k2.webp" alt="" />
                     </div>
-                    <h2>PC Gamer para Fornite</h2>
+                    <h2>PC Gamer para 4K</h2>
+                </div>
+                <div className={styles.carouselitem}>
+                    <div className={styles.picture}>
+                    <img src="/images/games-cover/pcg-freefire.webp" alt="" />
+                    </div>
+                    <h2>PC Gamer para Free Fire</h2>
+                </div>
+                <div className={styles.carouselitem}>
+                    <div className={styles.picture}>
+                    <img src="/images/games-cover/pcg-warzone2.webp" alt="PC Gamer para Warzone" />
+                    </div>
+                    <h2>PC Gamer para Warzone</h2>
+                </div>
+                <div className={styles.carouselitem}>
+                    <div className={styles.picture}>
+                    <img src="/images/games-cover/pcg-lol.webp" alt="" />
+                    </div>
+                    <h2>PC Gamer para League of Legends</h2>
+                </div>
+                <div className={styles.carouselitem}>
+                    <div className={styles.picture}>
+                    <img src="/images/games-cover/pcg-streaming2.webp" alt="" />
+                    </div>
+                    <h2>PC Gamer para Streaming</h2>
+                </div>
+                <div className={styles.carouselitem}>
+                    <div className={styles.picture}>
+                    <img src="/images/games-cover/pcg-vr2.webp" alt="" />
+                    </div>
+                    <h2>PC Gamer para Realidad Virtual</h2>
+                </div>
+                <div className={styles.carouselitem}>
+                    <div className={styles.picture}>
+                    <img src="/images/games-cover/pcg-genshin.webp" alt="" />
+                    </div>
+                    <h2>PC Gamer para Genshin</h2>
                 </div>
             </div>
-            <div className="container">
+            <div className="container flex">
               {computers.map((computer) => (
                 <div className={card.card} key={computer._id}>
                   <Link href={`/computer/${computer._id}`} passHref>
@@ -98,6 +135,7 @@ export default function PcGamer({ computers }) {
                   </button>
                 </div>
               ))}
+            </div>
             </div>
 
         </Layout>

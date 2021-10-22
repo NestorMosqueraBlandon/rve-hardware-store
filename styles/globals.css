@@ -595,3 +595,16 @@ button{
   display: flex;
   background-color: #000;
 }
+
+.grid{
+  width: 85%;
+  margin: 0 auto;
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
