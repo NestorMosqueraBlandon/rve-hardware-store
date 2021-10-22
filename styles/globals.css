@@ -580,3 +580,18 @@ button{
     transform: rotate(360deg);
   }
 }
+
+.main__title{
+  margin-top: 4rem;
+}
+
+.main__text{
+  max-width: 700px;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.banner{
+  display: flex;
+  background-color: #000;
+}

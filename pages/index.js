@@ -37,10 +37,11 @@ export default function Home({ computers }) {
       <div className="container">
         <div className="center">
           {/* <h2>PC GAMER SLASH</h2> */}
-          <p>Super. Mega. Rapido</p>
+          <h2 className="main__title">Super. Mega. Rapido</h2>
           {/* <a href="">Mas informacion</a> */}
+          <p className="main__text">Por mucho tiempo los amantes de los videojuegos se han conformado con una PC Gamer sin personalidad, sin carácter y sin aquello que te haga vibrar. Con una PC de Real Vision Hardware, tienes el extremo opuesto: una PC Gamer con identidad única, con estética inigualable y con tanta potencia que no pasarás desapercibido en cualquier juego.</p>
           <div className="centerImg">
-            <img src="./images/pchero2.png" alt="" width="100%" />
+            {/* <img src="./images/pchero2.png" alt="" width="100%" /> */}
           </div>
         </div>
         <h2>Potenciar la mejor tanto en el trabajo como en el juego.</h2>
