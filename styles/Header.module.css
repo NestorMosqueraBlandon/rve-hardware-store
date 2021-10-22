@@ -17,7 +17,7 @@
     top: 0;
     width: 80vw;
     min-height: 100vh;
-    background-color: #100f10;
+    background-color: #0e0e10;
     padding: 1rem 2rem;
     transition: 1s;
     z-index: 999;
@@ -29,7 +29,7 @@
     top: 0;
     width: 80vw;
     min-height: 100vh;
-    background-color: #100f10;
+    background-color: #0e0e10;
     padding:2rem;
     transition: 1s;
     z-index: 999;

@@ -1,16 +1,22 @@
 .card {
   position: relative;
   min-width: 288px;
-  width: 260px;
+  width: 350px;
   overflow: hidden;
   /* border: 1px solid rgba(255, 255, 255, 1); */
-  margin: 10px;
-  min-height: 580px;
+  /* margin: 10px; */
+  /* min-height: 580px; */
   padding: 0.5rem;
+  padding-bottom: 2rem;
+  transition: .3s;
+  border-radius: .5rem;
 }
 
+.card:hover{
+  background-color: rgba(255, 255, 255, .03);
+}
 .card img {
-  /* width: 80%; */
+  width: 100%;
 }
 
 .card ul {
@@ -21,6 +27,7 @@
   list-style: none;
   font-size: 10px;
   margin-top: 1rem;
+  display: none;
 }
 
 .card ul li {
@@ -45,13 +52,20 @@
 }
 
 .card h2 {
-  font-size: 14px;
+  font-size: 1.5rem;
+
 }
 
 .card p {
-  font-size: 12px;
+  font-size: 18px;
 }
 
+.header h6{
+  text-decoration: line-through; 
+  color: tomato;
+  font-size: 1.4rem;
+  opacity: .7;
+}
 .button {
   background-color: royalblue;
   border: none;
@@ -65,6 +79,6 @@
 }
 
 .picture{
-  width: 150px;
+  width: 100%;
   object-fit: cover;
 }

@@ -152,9 +152,15 @@ export default function Home({ computers }) {
                       <div>
                         <div className={card.header}>
                           <h2>{computer.name}</h2>
-                          <p className="item-price">
-                            <DivisaFormater value={computer.price} />
-                          </p>
+                          <div>
+                            <h6 className="item-price">
+                              <DivisaFormater value={computer.price + (computer.price * 0.12)} />
+                            </h6>
+                            <p className="item-price">
+                              <DivisaFormater value={computer.price} />
+                            </p>
+                          </div>
+
                         </div>
                         <ul>
                           {computer.specs.map((spec) => (
