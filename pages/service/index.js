@@ -14,7 +14,7 @@ export default function index() {
                 <p className={styles.leftext}>Nuestro servicio de revisión, reparación, formateo, mantenimiento preventivo y actualizacion de computadoras se distingue por el amplio conocimiento de RVE HARDWARE ha acumulado a través de varios años de estar en contacto con el hardware de las marcas más reconocidas de alto desempeño.</p>
                 <div className={styles.headerfooter}>
                       <Link href="/service/contact"><a> <button>Solicitar servicio</button> </a></Link>
-                    <a href="">¿En qué somos especialistas? <i class='bx bx-right-arrow-alt'></i> </a>
+                    <a href="">¿En qué somos especialistas? <i className='bx bx-right-arrow-alt'></i> </a>
                 </div>
                 </div>
 
