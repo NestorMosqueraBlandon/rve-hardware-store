@@ -23,7 +23,7 @@ export default function ProductScreen(props) {
     router.push('/cart');
   };
   return (
-    <Layout title={computer.name}>
+    <Layout title={computer.name} logo="../img/logo/logo.svg">
       <div className={styles.header}>
         <details>
           <summary>

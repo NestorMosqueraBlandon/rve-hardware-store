@@ -11,7 +11,7 @@ import { useContext } from 'react';
 import Menu from './Menu';
 import Header from './Header';
 
-export default function Layout({ title, children }) {
+export default function Layout({ title, children, logo }) {
   const { state, dispatch } = useContext(Store);
   const { cart, userInfo } = state;
 
@@ -34,7 +34,7 @@ export default function Layout({ title, children }) {
           rel="stylesheet"
         />
       </Head>
-      <Header logo="./img/logo/logo.svg" />
+      <Header logo={logo} />
       <main className="main">{children}</main>
       {/* <footer className={Header.footer}>
                 <p>

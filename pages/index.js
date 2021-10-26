@@ -33,7 +33,7 @@ export default function Home({ computers }) {
   };
 
   return (
-    <Layout>
+    <Layout logo="./img/logo/logo.svg">
       <div className="container">
         <div className="center">
           {/* <h2>PC GAMER SLASH</h2> */}
