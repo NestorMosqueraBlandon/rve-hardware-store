@@ -21,7 +21,7 @@ export default function Cart() {
       {cartItems.length === 0 ? (
         <div> El Carrito esta Vacio </div>
       ) : (
-        <div>
+        <div className="cart-container">
           <h2 className="title-cart">
             {cartItems.length}{' '}
             {cartItems.length == 1 ? 'Articulo' : 'Articulos'} en el Carrito

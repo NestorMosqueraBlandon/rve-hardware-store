@@ -41,18 +41,23 @@ export default function ProductScreen(props) {
           </ul>
         </details>
       </div>
-      <div className={styles.title}>
+      {/* <div className={styles.title}>
         <h2>{computer.name}</h2>
         <h4>Un salto al siguiente nivel.</h4>
-      </div>
+      </div> */}
       <div className={styles.container}>
         <div className={styles.hero}>
           <div className={styles.imgcontainer}>
-            {/* <Image src={computer.image} alt={computer.name} width={'200%'} height={'200%'}/> */}
             <img src={`../${computer.image}`} alt={computer.name} />
           </div>
-        </div>
-        <div className={styles.details}>
+          <div className={styles.herotitle}>
+            <h2>{computer.name}</h2>
+            {/* <h4>Un salto al siguiente nivel.</h4> */}
+          </div>
+          <div className={styles.herodetails}>
+            <div className={styles.herodetailstitle}>
+              <h4><i class='bx bxs-cog'></i> Detalles del armado</h4>
+            </div>
           <ul>
             {computer.specs.map((spec) => (
               <li key={spec._id} className={styles.detailsItem}>
@@ -60,18 +65,21 @@ export default function ProductScreen(props) {
                   className={styles.icon}
                   src="../images/icons/cpu.png"
                   alt=""
-                />{' '}
+                />
                 {spec.name}
               </li>
             ))}
           </ul>
         </div>
+        </div>
+        
       </div>
-      <div className={styles.container}>
+      <div className={styles.containerdetails}>
         <div className={`last-item ${styles.gamescontainer}`}>
-          <h2>Juegos Recomendados</h2>
+          <h2><i class='bx bxs-joystick' ></i> Juegos Recomendados</h2>
           <div className={styles.line}></div>
           <ul className={styles.games}>
+            
             <li className={styles.detailsItem}>
               <img
                 className={styles.gameicon}
@@ -104,6 +112,72 @@ export default function ProductScreen(props) {
               <img
                 className={styles.gameicon}
                 src="../images/games/read-dead-cover.png"
+                alt=""
+              />{' '}
+            </li>
+          </ul>
+        </div>
+        <div className={`last-item ${styles.gamescontainer}`}>
+          <h2><i class='bx bxs-palette' ></i> Ideal Para...</h2>
+          <div className={styles.line}></div>
+          <ul className={styles.games}>
+            {computer.price > 4000000? 
+            
+          <>
+            <li className={styles.detailsItem}>
+              <img
+                className={styles.gameicon}
+                src="../img/programs/photoshop-logo.png"
+                alt=""
+              />{' '}
+            </li>
+            <li className={styles.detailsItem}>
+              <img
+                className={styles.gameicon}
+                src="../img/programs/illustrator-logo.png"
+                alt=""
+              />{' '}
+            </li>
+            <li className={styles.detailsItem}>
+              <img
+                className={styles.gameicon}
+                src="../img/programs/premier-pro-logo.png"
+                alt=""
+              />{' '}
+            </li>
+
+            <li className={styles.detailsItem}>
+              <img
+                className={styles.gameicon}
+                src="../img/programs/affter-effects-logo.png"
+                alt=""
+              />{' '}
+            </li>
+            <li className={styles.detailsItem}>
+              <img
+                className={styles.gameicon}
+                src="../img/programs/photoshop-logo.png"
+                alt=""
+              />{' '}
+            </li>
+
+            </>
+          : 
+          
+          <li></li>
+          }
+            <li className={styles.detailsItem}>
+              <img
+                className={styles.gameicon}
+                src="../img/programs/python-logo.png"
+                alt=""
+              />{' '}
+            </li>
+            
+            <li className={styles.detailsItem}>
+              <img
+                className={styles.gameicon}
+                src="../img/programs/blender-logo.png"
                 alt=""
               />{' '}
             </li>

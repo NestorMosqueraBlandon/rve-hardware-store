@@ -276,13 +276,6 @@ summary {
   width: 100px;
 }
 
-.cart-item {
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin: 20px;
-  padding: 10px;
-  margin-bottom: 5px;
-  max-width: 500px;
-}
 
 .cart-item h3 {
   font-size: 1.4rem;
@@ -437,6 +430,15 @@ p {
   font-weight: 300;
   margin-bottom: 2.5rem;
 }
+
+.cart-item {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 20px;
+  padding: 10px;
+  margin-bottom: 5px;
+  max-width: 500px;
+}
+
 @media screen and (min-width: 500px) {
   form {
     max-width: 450px;
@@ -444,6 +446,25 @@ p {
 
   .menu {
     display: none;
+  }
+
+  .cart-container{
+    width: 100%;
+    padding: 0 11rem;
+  }
+  details{
+    width: 100%;
+  }
+
+  .cart-item {
+    margin:1rem 0px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cart-card{
+    width: 100%;
+    max-width: 100%;
   }
 }
 

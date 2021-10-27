@@ -181,7 +181,7 @@ export default function Order(props) {
             </div>
           </div>
           <div className="card-button last-item">
-            {order.paymentMethod === 'Bancolombia' ? (
+            {order.paymentMethod === 'MercadoPago' ? (
               <form
                 action="https://rveapi.herokuapp.com/api/v1/config/mercadopago"
                 method="POST"
