@@ -56,7 +56,7 @@ export default function ProductScreen(props) {
           </div>
           <div className={styles.herodetails}>
             <div className={styles.herodetailstitle}>
-              <h4><i class='bx bxs-cog'></i> Detalles del armado</h4>
+              <h4><i className='bx bxs-cog'></i> Detalles del armado</h4>
             </div>
           <ul>
             {computer.specs.map((spec) => (
@@ -76,7 +76,7 @@ export default function ProductScreen(props) {
       </div>
       <div className={styles.containerdetails}>
         <div className={`last-item ${styles.gamescontainer}`}>
-          <h2><i class='bx bxs-joystick' ></i> Juegos Recomendados</h2>
+          <h2><i className='bx bxs-joystick' ></i> Juegos Recomendados</h2>
           <div className={styles.line}></div>
           <ul className={styles.games}>
             
@@ -118,7 +118,7 @@ export default function ProductScreen(props) {
           </ul>
         </div>
         <div className={`last-item ${styles.gamescontainer}`}>
-          <h2><i class='bx bxs-palette' ></i> Ideal Para...</h2>
+          <h2><i className='bx bxs-palette' ></i> Ideal Para...</h2>
           <div className={styles.line}></div>
           <ul className={styles.games}>
             {computer.price > 4000000? 
