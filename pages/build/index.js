@@ -101,7 +101,7 @@ export default function Build({categories, products}) {
                     <button onClick={() => setActiveList(false)}><i className='bx bxs-x-circle'></i></button>
                 <ul>
                     {build.map((item) => (
-                        <li>{item.name}</li>
+                        <li key={item.name}>{item.name}</li>
                     ))}
                 </ul>
                 </div>
