@@ -8,6 +8,7 @@ export default function Build({categories, products}) {
     const [currentCategory, setCurrentCategory] = useState(0);
     const lengthCategory = categories.length;
 
+    const [activeList, setActiveList] = useState(false)
     const nextCategory = () => {
         setCurrentCategory(currentCategory === lengthCategory - 4 ? 0 : currentCategory + 1)
     }
@@ -94,6 +95,18 @@ export default function Build({categories, products}) {
                 <div className={styles.description}>
                    <p>PRECIO TOTAL : <DivisaFormater value={build.reduce((a, c) =>  a + Number(c.price) * Number(1), 0)}> </DivisaFormater> </p>         
                 </div>
+
+                <div className={activeList? styles.listitems : styles.listitemsnone}>
+                    <h2>Componentes Elegidos</h2>
+                    <button onClick={() => setActiveList(false)}><i className='bx bxs-x-circle'></i></button>
+                <ul>
+                    {build.map((item) => (
+                        <li>{item.name}</li>
+                    ))}
+                </ul>
+                </div>
+
+                <button onClick={() => setActiveList(true)} className={styles.buildbtn}><i className='bx bxs-building' ></i></button>
 
                 
             </div>

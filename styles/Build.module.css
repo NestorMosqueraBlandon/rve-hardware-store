@@ -108,3 +108,60 @@
 .description p{
     display: flex;
 }
+
+
+.listitemsnone{
+
+    position: absolute;
+    top: 0;
+    left: -550px;
+    height: 100vh;
+    width: 300px;
+    overflow: hidden;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, .9);
+    transition: .8s ease-in-out;
+
+}
+
+.listitems{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 300px;
+    overflow: hidden;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, .9);
+    transition: .8s ease-in-out;
+}
+
+.listitems h2, .listitemsnone h2{
+    margin-top: 4rem;
+    font-size: 2rem;
+    text-align: left;
+}
+
+.listitems ul li, .listitemsnone ul li{
+    margin: 2rem 0;
+}
+
+.listitems button, .listitemsnone button{
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 1);
+    font-size: 2.5rem;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+.buildbtn{
+    background-color: transparent;
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    font-size: 3.5rem;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+}
