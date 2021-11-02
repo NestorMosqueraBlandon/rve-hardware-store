@@ -3,7 +3,7 @@ import DivisaFormater from "../../components/DivisaFormater";
 import Layout from "../../components/Layout";
 import styles from '../../styles/Build.module.css';
 
-export default function index({categories, products}) {
+export default function Build({categories, products}) {
 
     const [currentCategory, setCurrentCategory] = useState(0);
     const lengthCategory = categories.length;
@@ -60,14 +60,14 @@ export default function index({categories, products}) {
                             {categories.filter((category) => category.type === "build")
                             .map((category, index) => {
                                 return(
-                                    <div>
+                                    <div key={category._id}>
                                         {index === currentCategory && (
                                             <p className={styles.categoryContent} key={category.id}>
                                                 <span className={styles.category}>{category.name === "CPU"? "PROCESADOR" : category.name === "MOTHERBOARD" ? "TARJETA MADRE" : category.name === "GRAPHICS CARD" ? "TARJETA GRAFICA" : category.name === "RAM MEMORY"? "MEMORIA RAM" : category.name === "SOLID STATE DRIVE"? "ESTADO SOLIDO" : category.name === "HARD DISK DRIVE" ? "DISCO DURO" : category.name}</span>
                                                 <img src="./img/category/cpu.png" alt={category.name} />
                                                 {products.filter((p) => p.category === category._id).map((product, index) => {
                                                     return(
-                                                        <div className={styles.flexcol}>
+                                                        <div key={product._id} className={styles.flexcol}>
                                                             {index === currentProduct && (
                                                                 <>
                                                                 <span key={product.id} className={styles.productCard}>{product.name}</span>
