@@ -44,8 +44,9 @@ export default function Header({logo}) {
                             
                             {/* <Link href="/"><a> Computadores </a></Link>  */}
                             </li>
-                        <li>Escritorios</li>
-                        <li>Torneos</li>
+                        {/* <li>Escritorios</li> */}
+                        {/* <li>Torneos</li> */}
+                        <li> <Link href="/tracking"><a> Seguimiento </a></Link></li>
                         <li> <Link href="/build"><a> Construir </a></Link></li>
                         <li> <Link href="https://rvehardware.com/post"><a> Blog </a></Link></li>
 
