@@ -555,6 +555,13 @@ ul {
   margin-right: 0.5rem;
 }
 
+.main__title{
+  margin-top: 4rem;
+  font-size: 5rem;
+  line-height: 40px;
+}
+
+
 .main .center {
   padding: 0;
 }
@@ -602,9 +609,6 @@ button{
   }
 }
 
-.main__title{
-  margin-top: 4rem;
-}
 
 .main__text{
   max-width: 700px;
@@ -678,6 +682,11 @@ button{
 }
 
 @media screen and (max-width: 500px) {
+  .main__title{
+    margin-top: 4rem;
+  }
+
+  
   .tracking{
     margin:  3rem auto;
     padding: 0 1rem;
