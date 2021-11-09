@@ -6,8 +6,8 @@ export default function DivisaFormater({ value }) {
   });
 
   return (
-    <div>
-      <su>{formaterMoney.format(value)}</su>
-    </div>
+    <>
+      <span>{formaterMoney.format(value)}</span>
+    </>
   );
 }

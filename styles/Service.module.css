@@ -103,3 +103,34 @@
 .form{
     width: 40%;
 }
+
+.mantenince{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.manteninceItem{
+    display: flex;
+    align-items: center;
+    flex-direction: column;    
+    max-width: 400px;
+    width: 400px;
+}
+
+.manteninceItem h2{
+    font-weight: 600;
+    line-height: 25px;
+    font-size: 1.8rem;
+    max-width: 300px;
+}
+
+.manteninceItem p{
+    max-width: 250px;
+}
+
+.manteninceItem img{
+    width: 70px;
+}

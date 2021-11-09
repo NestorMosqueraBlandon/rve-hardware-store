@@ -15,14 +15,18 @@
 }
 
 .selectContainer button{
-    background: none;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 50px;
     border: none;
-    color: #f2f6fa;
-    font-size: 3.5rem;
+    color: royalblue;
+    font-size: 2rem;
+    /* padding: .5rem; */
+    height: 30px;
+    width: 30px;
 }
 
 .selectContainer .card{
-    border: 1px solid rgba(255, 255, 255, .1);
+    border: 2px solid royalblue;
     max-width: 300px;
     width: 300px;
     margin: 0 auto;
@@ -70,24 +74,31 @@
 }
 
 .category{
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .categoryContent{
+    padding-top: 2.7rem;
     text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .categoryContent img{
-    width: 230px;
+    width: 200px;
     /* height: 300px; */
 }
 
 .selectContainer .selectbtn{
     background-color: royalblue;
-    border-radius: .5rem;
+    border-radius: 0;
     margin-top: 2rem;
-    padding: 1rem;
-    font-size: 1.4rem;
+    /* padding: 1rem; */
+    font-size: 1.8rem;
+    width: 100%;
+    color: #f2f6fa;
+    width: 99%;
 }
 
 .flexcol{
@@ -164,4 +175,26 @@
     position: absolute;
     bottom: 0;
     right: 20px;
+}
+
+.productprice{
+    color: royalblue;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.productCard{
+    margin-top: 2rem;
+}
+
+.compatibility{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.compatibility span{
+    text-align: left;
+    font-size: 1rem;
+    margin-left: 1rem;
 }
