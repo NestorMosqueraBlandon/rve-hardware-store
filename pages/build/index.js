@@ -104,8 +104,8 @@ export default function Build({ categories, products }) {
                 </div>
 
                 <div className={styles.description}>
-                    <p className={styles.compatibility}><i class='bx bxs-check-circle'></i> <strong> Ajuste: </strong> <span> No se encontraron incompatibilidades </span> </p>
-                    <p className={styles.compatibility}><i class='bx bxs-bolt-circle' ></i> <strong>Wataje Estimado: </strong> <span> 300w </span></p>
+                    <p className={styles.compatibility}><i className='bx bxs-check-circle'></i> <strong> Ajuste: </strong> <span> No se encontraron incompatibilidades </span> </p>
+                    <p className={styles.compatibility}><i className='bx bxs-bolt-circle' ></i> <strong>Wataje Estimado: </strong> <span> 300w </span></p>
                     <p>PRECIO TOTAL : <strong> <DivisaFormater value={build.reduce((a, c) => a + Number(c.price) * Number(1), 0)}> </DivisaFormater> </strong> </p>
                 </div>
 
@@ -119,7 +119,9 @@ export default function Build({ categories, products }) {
                     </ul>
                 </div>
 
-                <button onClick={addToCartHandler}>COMPRAR</button>
+                <div className={styles.center}>
+                    <button className={styles.buybtn} onClick={addToCartHandler}>COMPRAR</button>
+                </div>
 
                 <button onClick={() => setActiveList(true)} className={styles.buildbtn}><i className='bx bxs-building' ></i></button>
 
