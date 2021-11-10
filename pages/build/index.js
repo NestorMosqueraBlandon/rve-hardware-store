@@ -37,10 +37,18 @@ export default function Build({ categories, products }) {
         if (!name) {
             return;
         }
+        
+        const existItem = build.find((item) => item.category === category);
+        
+        console.log(existItem)
+        const items = existItem? build.map((item) => {
+            if(item.category == category){
+                item.name = name
+                item.price = price
+                setBuild([...build])        
+            }
+        }) : 
         setBuild([...build, { category, name, price }])
-        console.log(build)
-
-
     }
 
 
@@ -56,6 +64,12 @@ export default function Build({ categories, products }) {
         dispatch({type: "CART_ADD_ITEM", payload: {slug: "build-pc", name: "My Dream PC", image: "/images/pc1.png", price: total, quantity: 1}})
         router.push('/cart');
     }
+
+    const clearBuild = async () => {
+        setBuild([])
+    }
+
+    console.log(build)
 
     return (
         <Layout logo="../../img/logo/logo.svg">
@@ -117,6 +131,11 @@ export default function Build({ categories, products }) {
                             <li key={item.name}>{item.name}</li>
                         ))}
                     </ul>
+                </div>
+
+
+                <div className={styles.center}>
+                    <button className={styles.buybtn} onClick={clearBuild}>Limpiar</button>
                 </div>
 
                 <div className={styles.center}>
