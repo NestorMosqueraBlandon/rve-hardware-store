@@ -1,0 +1,259 @@
+.blogheader{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    margin: 1rem 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.blogheader ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.blogpicture{
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.blogusername{
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-left: .5rem;
+}
+
+.bloguser{
+    display: flex;
+    align-items: center;
+}
+.blogheader ul li{
+    padding-right: 1.6rem;
+    padding-top: 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.blogheader input{
+    background-color: rgba(255, 255, 255, .1);
+    border: none;
+    color: #f2f6fa;
+    padding: 1rem;
+    border-radius: 2rem;
+    width: 95%;
+}
+
+.blogheader .active{
+    color: royalblue;
+}
+.blogbanner{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.blogbanner picture{
+    border-radius: 2rem;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 2rem;
+    margin-right: 3rem;
+}
+
+.blogbanner picture img{
+    border-radius: 2rem;
+}
+
+.blogbanner span{
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 2rem;
+    padding: .5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.blogbanner h2{
+    font-size: 3.5rem;
+}
+
+.blogbanner p{
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, .5);
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.blogbanner button{
+    border: none;
+
+    border-radius: 1rem;
+    padding: .5rem 1rem;
+    background: royalblue;
+    color: #f2f6fa;
+}
+
+.bloglist{
+    margin: 2rem 10rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.blogitem{
+    min-width: 320px;
+    width: 320px;
+}
+
+.blogitem picture img{
+    border-radius: 1.5rem;
+}
+
+.blogcategory{
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, .1);
+    padding: .5rem;
+    border-radius: 1rem;
+    font-weight: 600;
+}
+
+.blogitem h2{
+    line-height: 2.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.blogitem p{
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, .5);
+    margin: 1rem 0;
+}
+
+.blogdate{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .4);
+    border-right: 3px solid rgba(255, 255, 255, .1);
+    padding-right: 1rem;
+}
+
+.container{
+    margin: 2rem 2rem;
+    display: grid;
+    padding-top: .5rem;
+    /* grid-template-columns:  1fr 3fr 1fr;
+    align-items: flex-start;
+    justify-content: center; */
+}
+
+.aside{
+    padding-top: 1rem;
+    display: none;
+}
+.aside h2{
+    font-size: 1.4rem;
+    margin-bottom: .5rem;
+}
+
+.aside p{
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, .4);
+    margin-bottom: 1.5rem;
+}
+
+.aside button{
+    background-color: royalblue;
+    color: #f2f6fa;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    font-weight: 600;
+}
+
+.aside h3{
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+}
+
+.centercontent{
+    width: 100%;
+}
+.centercontent h2{
+    margin-bottom: 1rem;
+    font-size: 4rem;
+    line-height: 4.2rem;
+}
+
+.contentdata{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.centercontent img{
+    border-radius: 2rem;
+}
+
+
+@media screen and (min-width: 900px) {
+    .blogheader{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 1rem 8rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .blogheader input{
+        max-width: 400px;
+    }
+
+    .blogbanner picture{
+        border-radius: 2rem;
+        overflow: hidden;
+        max-width: 600px;
+        padding-bottom: 2rem;
+        margin-right: 3rem;
+    }
+
+    .blogbanner{
+        flex-direction: row;
+        margin: 1rem 8rem;
+    }
+
+    .blogbanner a{
+        background: #4169e1;;
+        border: none;
+        padding: .5rem;
+        border-radius: 5px;
+        color: #f2f6fa;
+        font-weight: 600;
+        min-width: 120px;
+        font-size:1.2rem ;
+    }
+
+    .container{
+        grid-template-columns:  1fr 3fr 1fr;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 3rem 8rem;
+    }
+    
+
+    .aside{
+        display: block;
+    }
+
+    
+}

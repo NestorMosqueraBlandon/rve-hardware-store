@@ -202,7 +202,45 @@ export default function Order(props) {
               //   <button onClick={() => payOrder()} className="btn">
               //     CONTINUAR
               //   </button>
-              <div>CUENTA BANCOLOMBIA</div>
+              <div className="card">
+            <div className="card_title">
+            <div>CUENTA BANCOLOMBIA</div>
+              
+            </div>
+            <div className="card_body">
+              <ul className="summary-items">
+                <h6>Real Vision Enterprise</h6>
+                <li>
+                <p> Numero: 01200012646</p> 
+                  <p> Tipo: Ahorros</p> 
+                  <br />
+                  <p> Identificacion: 1004010670</p> 
+                </li>
+                <h6>Luis Fernando Mosquera</h6>
+                <li>
+                <p> Numero: 01200012646 </p> 
+                  <p> Tipo: Ahorros</p> 
+                  <br />
+                  <p> Identificacion: 1152470605</p> 
+                </li>
+                <h6>Luis Fernando Mosquera (Nequi)</h6>
+                <li>
+                <p> Numero: 3135840605 </p> 
+                  <p> Tipo: Nequi</p> 
+                  <br />
+                  <p> Identificacion: 1152470605</p> 
+                </li>
+              </ul>
+
+              <label htmlFor="">Subir Compobante</label>
+              <br />
+              <input type="file" name="" id="" />
+              <br />
+              <br />
+              <button className="btn btn-success">DATOS DE ENVIO</button>
+                
+            </div>
+          </div>
             )}
             {/* */}
           </div>

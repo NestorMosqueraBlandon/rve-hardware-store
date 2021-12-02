@@ -20,7 +20,7 @@ export default function Placeorder() {
     cartItems.reduce((a, c) => a + c.price * c.quantity, 0)
   );
   const shippingPrice = itemsPrice > 3500000 ? 0 : 30000;
-  const taxPrice = round2(itemsPrice * 0.03);
+  const taxPrice = paymentMethod == "MercadoPago"? round2(itemsPrice * 0.03) : 0;
   const totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
 
   const [loading, setLoading] = useState(false);
@@ -161,6 +161,7 @@ export default function Placeorder() {
           </ul>
         </div>
       </div>
+
       <div className="card-button last-item">
         <button onClick={placeOrderHandler} className="btn">
           CONTINUAR
