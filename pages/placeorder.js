@@ -36,7 +36,7 @@ export default function Placeorder() {
       setLoading(true);
       const { data } = await axios.post(
         // 'http://localhost:4000/api/v1/orders',
-        'http://localhost:6002/api/v1/orders',
+        'https://rveapi.herokuapp.com/api/v1/orders',
         {
           // user: userInfo,
           orderItems: cartItems,
