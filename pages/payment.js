@@ -36,7 +36,7 @@ export default function Payment() {
     // }
   };
   return (
-    <Layout title="Metodo de Pago">
+    <Layout logo="./img/logo/logo.svg" title="Metodo de Pago">
       <form onSubmit={submitHandler}>
         <h2>Metodo de Pago</h2>
         <p>Seleccion el metodo de pago que le resulte mas comodo</p>

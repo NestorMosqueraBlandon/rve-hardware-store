@@ -8,10 +8,10 @@ export default function Shipping() {
   const router = useRouter();
 
   const [name, setName] = useState('');
-  const [identification, setIdentification] = useState('');
-  const [phone, setPhone] = useState('');
-  const [address, setAddress] = useState('');
-  const [city, setCity] = useState('');
+  // const [identification, setIdentification] = useState('');
+  // const [phone, setPhone] = useState('');
+  // const [address, setAddress] = useState('');
+  // const [city, setCity] = useState('');
 
   const { state, dispatch } = useContext(Store);
   const {
@@ -19,9 +19,9 @@ export default function Shipping() {
     cart: { shippingAddres },
   } = state;
   useEffect(() => {
-    if (!userInfo) {
-      router.push('/login?redirect=/shipping');
-    }
+    // if (!userInfo) {
+    //   router.push('/login?redirect=/shipping');
+    // }
 
     if (shippingAddres) {
       setName(shippingAddres.name.toUpperCase());
@@ -36,19 +36,28 @@ export default function Shipping() {
     e.preventDefault();
     dispatch({
       type: 'SAVE_SHIPPING_ADDRESS',
-      payload: { name, identification, phone, address, city },
+      // payload: { name, identification, phone, address, city },
+      payload: { name},
     });
-    Cookies.set('shippingAddress', name, identification, phone, address, city);
+    Cookies.set('shippingAddress', name, /* identification, phone, address, city*/);
     router.push('/payment');
   };
 
   return (
-    <Layout title="Datos de Envio">
+    <Layout logo="./img/logo/logo.svg" title="Datos de Envio">
       <form onSubmit={submitHandler}>
         <h2>Datos de Envio</h2>
         <p>Ingrese sus datos lo mas especificos prosible</p>
 
         <div className="form-group">
+          <label htmlFor="">CORREO ELECTRONICO</label>
+          <input
+            type="text"
+            value={name.toUpperCase()}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        {/* <div className="form-group">
           <label htmlFor="">NOMBRE</label>
           <input
             type="text"
@@ -87,7 +96,7 @@ export default function Shipping() {
             value={city.toUpperCase()}
             onChange={(e) => setCity(e.target.value)}
           />
-        </div>
+        </div> */}
         <div className="form-group-btn">
           <input type="submit" value="Continuar" />
         </div>

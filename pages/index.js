@@ -29,7 +29,7 @@ export default function Home({ computers }) {
 
   const addToCartHandler = (computer) => {
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...computer, quantity: 1 } });
-    router.push('/cart');
+    router.push('/shipping');
   };
 
   return (
@@ -70,80 +70,8 @@ export default function Home({ computers }) {
         <div className={styles.grid}>
           {type === 'workstation' ? (
             <>
-              {/* {data.workstations.map((computer) => (
-                <div className={card.card} key={computer.id}>
-                  <div>
-                    <img src={computer.image} alt="" />
-                  </div>
-                  <div>
-                    <div className={card.header}>
-                      <h2>{computer.name}</h2>
-                      <p>{computer.price}</p>
-                    </div>
-                    <ul>
-                      <li>
-                        <img
-                          className={styles.icon}
-                          src="./images/icons/cpu.png"
-                          alt=""
-                        />{' '}
-                        {computer.cpu}
-                      </li>
-                      <li>
-                        <img
-                          className={styles.icon}
-                          src="./images/icons/motherboard.png"
-                          alt=""
-                        />{' '}
-                        {computer.motherboard}
-                      </li>
-                      <li>
-                        <img
-                          className={styles.icon}
-                          src="./images/icons/ram.png"
-                          alt=""
-                        />{' '}
-                        {computer.ram}
-                      </li>
-                      <li>
-                        <img
-                          className={styles.icon}
-                          src="./images/icons/ssd-drive.png"
-                          alt=""
-                        />{' '}
-                        {computer.ssd}
-                      </li>
-                      <li>
-                        <img
-                          className={styles.icon}
-                          src="./images/icons/hdd.png"
-                          alt=""
-                        />{' '}
-                        {computer.hdd}
-                      </li>
-                      <li>
-                        <img
-                          className={styles.icon}
-                          src="./images/icons/gpu.png"
-                          alt=""
-                        />{' '}
-                        {computer.gpu}
-                      </li>
-                    </ul>
-                    <button
-                      onClick={() => addToCartHandler()}
-                      className={card.button}
-                    >
-                      Anadir al carrito
-                    </button>
-                  </div>
-                </div>
-              ))} */}
-              <h2>No hay productos</h2>
-            </>
-          ) : type === 'gamer' ? (
-            <>
-              {computers.map((computer) => (
+               {computers.filter((computer) => computer.name.includes("WORKSTATION"))
+               .map((computer) => (
                 <div className={card.card} key={computer._id}>
                   <Link href={`/computer/${computer._id}`} passHref>
                     <a>
@@ -183,6 +111,53 @@ export default function Home({ computers }) {
                     className={card.button}
                   >
                     Añadir al carrito
+                  </button>
+                </div>
+              ))}
+            </>
+          ) : type === 'gamer' ? (
+            <>
+              {computers.filter((computer)  => computer.name.includes("PC GAMER"))
+              .map((computer) => (
+                <div className={card.card} key={computer._id}>
+                  <Link href={`/computer/${computer._id}`} passHref>
+                    <a>
+                      <div className={card.picture}>
+                        <img src={computer.image} alt={computer.name} />
+                      </div>
+                      <div>
+                        <div className={card.header}>
+                          <h2>{computer.name}</h2>
+                          <div>
+                            <h6 className="item-price">
+                              <DivisaFormater value={computer.price + (computer.price * 0.12)} />
+                            </h6>
+                            <p className="item-price">
+                              <DivisaFormater value={computer.price} />
+                            </p>
+                          </div>
+
+                        </div>
+                        <ul>
+                          {computer.specs.map((spec) => (
+                            <li key={spec._id}>
+                              <img
+                                className={styles.icon}
+                                src="/images/icons/cpu.png"
+                                alt=""
+                              />{' '}
+                              {spec.name}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </a>
+                  </Link>
+                  <button
+                    onClick={() => addToCartHandler(computer)}
+                    className={card.button}
+                  >
+                    Comprar Ahora
                   </button>
                 </div>
               ))}

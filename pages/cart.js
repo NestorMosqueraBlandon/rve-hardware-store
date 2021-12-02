@@ -17,7 +17,7 @@ export default function Cart() {
     router.push('/shipping');
   };
   return (
-    <Layout title="Carrito">
+    <Layout logo="./img/logo/logo.svg" title="Carrito">
       {cartItems.length === 0 ? (
         <div> El Carrito esta Vacio </div>
       ) : (

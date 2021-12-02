@@ -1,7 +1,7 @@
 .card {
   position: relative;
-  min-width: 288px;
-  width: 350px;
+  min-width: 88px;
+  width: 150px;
   overflow: hidden;
   /* border: 1px solid rgba(255, 255, 255, 1); */
   /* margin: 10px; */
@@ -47,8 +47,18 @@
 
 .header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
+}
+
+.header div:last-child{
+  width: 100%;
+  text-align: center;
+}
+.header h2{
+  margin-bottom: 0;
 }
 
 .card h2 {
@@ -81,4 +91,33 @@
 .picture{
   width: 100%;
   object-fit: cover;
+}
+
+@media screen and (min-width: 700px) {
+  .card {
+    position: relative;
+    min-width: 288px;
+    width: 350px;
+    overflow: hidden;
+    /* border: 1px solid rgba(255, 255, 255, 1); */
+    /* margin: 10px; */
+    /* min-height: 580px; */
+    padding: 0.5rem;
+    padding-bottom: 2rem;
+    transition: .3s;
+}
+
+.header {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.header div:last-child{
+  width: 30%;
+  text-align: center;
+}
+
 }

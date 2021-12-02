@@ -20,7 +20,7 @@ export default function ProductScreen(props) {
   const addToCartHandler = async () => {
     // const {data} = await axios.get(`https://rveapi.herokuapp.com/api/v1/computers/${computer._id}`);
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...computer, quantity: 1 } });
-    router.push('/cart');
+    router.push('/shipping');
   };
   return (
     <Layout title={computer.name} logo="../img/logo/logo.svg">
@@ -54,6 +54,7 @@ export default function ProductScreen(props) {
             <h2>{computer.name}</h2>
             {/* <h4>Un salto al siguiente nivel.</h4> */}
           </div>
+
           <div className={styles.herodetails}>
             <div className={styles.herodetailstitle}>
               <h4><i className='bx bxs-cog'></i> Detalles del armado</h4>
@@ -72,6 +73,9 @@ export default function ProductScreen(props) {
           </ul>
         </div>
         </div>
+        <button onClick={addToCartHandler} className={styles.buttonNew}>
+                Comprar
+            </button>
         
       </div>
       <div className={styles.containerdetails}>

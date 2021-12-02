@@ -19,8 +19,8 @@ export default function Placeorder() {
   const itemsPrice = round2(
     cartItems.reduce((a, c) => a + c.price * c.quantity, 0)
   );
-  const shippingPrice = itemsPrice > 4500000 ? 0 : 38000;
-  const taxPrice = round2(itemsPrice * 0.15);
+  const shippingPrice = itemsPrice > 3500000 ? 0 : 30000;
+  const taxPrice = round2(itemsPrice * 0.03);
   const totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
 
   const [loading, setLoading] = useState(false);
@@ -36,9 +36,9 @@ export default function Placeorder() {
       setLoading(true);
       const { data } = await axios.post(
         // 'http://localhost:4000/api/v1/orders',
-        'https://rveapi.herokuapp.com/api/v1/orders',
+        'http://localhost:6002/api/v1/orders',
         {
-          user: userInfo,
+          // user: userInfo,
           orderItems: cartItems,
           shippingAddress,
           paymentMethod,
@@ -49,7 +49,7 @@ export default function Placeorder() {
         },
         {
           headers: {
-            authorization: `Bearer ${userInfo.token}`,
+            // authorization: `Bearer ${userInfo.token}`,
           },
         }
       );
@@ -64,20 +64,21 @@ export default function Placeorder() {
     }
   };
   return (
-    <Layout title="Realizar Pedido">
+    <Layout logo="./img/logo/logo.svg" title="Realizar Pedido">
       <h2>Resumen de Pedido</h2>
       <p>Seleccion el metodo de pago que le resulte mas comodo</p>
 
       <div className="card">
         <div className="card_title">
-          <h2>Direccion de Envio</h2>
+          {/* <h2>Direccion de Envio</h2> */}
+          <h2>Datos</h2>
         </div>
         <div className="card_body">
           <ul>
             <li>
-              <span>Nombre:</span> {shippingAddress.name}
+              <span>Correo:</span> {shippingAddress.name}
             </li>
-            <li>
+            {/* <li>
               <span>Cedula:</span> {shippingAddress.identification}
             </li>
             <li>
@@ -88,7 +89,7 @@ export default function Placeorder() {
             </li>
             <li>
               <span>Ciudad:</span> {shippingAddress.city}
-            </li>
+            </li> */}
           </ul>
           {shippingAddress.addres}
         </div>

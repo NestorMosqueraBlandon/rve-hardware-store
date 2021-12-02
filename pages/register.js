@@ -42,7 +42,7 @@ export default function Register() {
     }
   };
   return (
-    <Layout title="Registrarse">
+    <Layout logo="./img/logo/logo.svg" title="Registrarse">
       <form onSubmit={submitHandler}>
         <h2>Registrarse</h2>
         <p>Bienvenido de nuevo</p>

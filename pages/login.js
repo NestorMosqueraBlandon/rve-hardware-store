@@ -37,7 +37,7 @@ export default function Login() {
     }
   };
   return (
-    <Layout title="Iniciar Sesion">
+    <Layout logo="./img/logo/logo.svg" title="Iniciar Sesion">
       <form onSubmit={submitHandler}>
         <h2>Iniciar sesión</h2>
         <p>Bienvenido de nuevo</p>

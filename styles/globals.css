@@ -744,3 +744,20 @@ button{
 }
   
 }
+
+.card{
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+.card-button{
+  margin: 2rem auto;
+  max-width: 500px;
+}
+.summary-items{
+  width: 100%;
+}
+
+.summary-items span:last-child{
+  width: 35%;
+}

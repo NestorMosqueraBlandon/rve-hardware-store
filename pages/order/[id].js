@@ -45,9 +45,9 @@ export default function Order(props) {
   } = order;
 
   useEffect(() => {
-    if (!userInfo) {
-      return router.push('/login');
-    }
+    // if (!userInfo) {
+    //   return router.push('/login');
+    // }
 
     const fetchOrder = async () => {
       try {
@@ -55,7 +55,7 @@ export default function Order(props) {
         const { data } = await axios.get(
           `https://rveapi.herokuapp.com/api/v1/orders/${orderId}`,
           {
-            headers: { authorization: `Bearer ${userInfo.token}` },
+            // headers: { authorization: `Bearer ${userInfo.token}` },
           }
         );
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
@@ -89,24 +89,24 @@ export default function Order(props) {
         <>
           <div className="card">
             <div className="card_title">
-              <h2>Direccion de Envio</h2>
+              <h2>Datos</h2>
             </div>
             <div className="card_body">
               <ul>
                 <li>
-                  <span>Nombre:</span> {shippingAddress.name}
+                  <span>Correo:</span> {shippingAddress.name}
                 </li>
                 <li>
-                  <span>Cedula:</span> {shippingAddress.identification}
+                  {/* <span>Cedula:</span> {shippingAddress.identification} */}
                 </li>
                 <li>
-                  <span>Telefono:</span> {shippingAddress.phone}
+                  {/* <span>Telefono:</span> {shippingAddress.phone} */}
                 </li>
                 <li>
-                  <span>Direccion:</span> {shippingAddress.address}
+                  {/* <span>Direccion:</span> {shippingAddress.address} */}
                 </li>
                 <li>
-                  <span>Ciudad:</span> {shippingAddress.city}
+                  {/* <span>Ciudad:</span> {shippingAddress.city} */}
                 </li>
               </ul>
               {shippingAddress.addres}
