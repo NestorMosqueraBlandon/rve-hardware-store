@@ -5,7 +5,7 @@ import Layout from "../../components/Layout";
 import styles from '../../styles/Build.module.css';
 import { Store } from "../../utils/Store";
 
-export default function windows({ categories, products }) {
+export default function Windows({ categories, products }) {
 
 
     const windowsCategories = [
