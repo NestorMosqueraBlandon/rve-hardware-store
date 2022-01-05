@@ -34,6 +34,15 @@
     position: relative;
 }
 
+.softwarecard{
+    border: 2px solid royalblue;
+    max-width: 300px;
+    width: 300px;
+    margin: 0 auto;
+    height: 405px;
+    position: relative;
+}
+
 .cornerArrows{
     width: 370px;
     position: absolute;
@@ -177,11 +186,25 @@
     right: 20px;
 }
 
+.imageProd{
+    width: 100px;
+}
+
 .productprice{
     color: royalblue;
     font-weight: 600;
     font-size: 1.8rem;
 }
+
+.productoldprice{
+    color: red;
+    font-weight: 600;
+    font-size: 1.8rem;
+    line-height: 1rem;
+    margin-top: 10px;
+    text-decoration: line-through;
+}
+
 
 .productCard{
     margin-top: 2rem;

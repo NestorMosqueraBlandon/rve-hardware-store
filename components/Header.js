@@ -6,6 +6,8 @@ export default function Header({logo}) {
     const [openMenu, setOpenMenu] = useState(false)
 
     const [openList, setOpenList] = useState(false)
+
+    const [openListSoftware, setOpenListSoftware] = useState(false)
     
     return (
         <header className={styles.header}>
@@ -37,6 +39,22 @@ export default function Header({logo}) {
                                     <li><Link href="/pcgamer"><a> PC Gaming </a></Link></li>
                                     <li><Link href="/"><a> Mini PC</a></Link></li>
                                     <li><Link href="/"><a> Portatiles</a></Link></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            
+                            {/* <Link href="/"><a> Computadores </a></Link>  */}
+                            </li>
+                            <li> 
+                            
+                            <div className={styles.details}>
+                                <div className={styles.detailtitle} onClick={() => setOpenListSoftware(!openListSoftware)}>
+                                    Software
+                                </div>
+                                <div className={openListSoftware? styles.detaillistopen : styles.detaillist}>
+                                    <ul>
+                                    <li><Link href="/software/windows"><a> Windows </a></Link></li>
                                     </ul>
 
                                 </div>
