@@ -83,7 +83,7 @@ export default function windows({ categories, products }) {
     
 
     const addToCartHandler = async () => {
-        dispatch({type: "CART_ADD_ITEM", payload: {slug: "build-pc", name: "Licencia Windows", image: "/images/pc1.png", price: total, quantity: 1}})
+        dispatch({type: "CART_ADD_ITEM", payload: {slug: "build-pc", name: "Licencia Windows", image: "/img/windows11.png", price: total, quantity: 1}})
         router.push('/cart');
     }
 
