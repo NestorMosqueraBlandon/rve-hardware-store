@@ -19,10 +19,16 @@ export default function Placeorder() {
   const itemsPrice = round2(
     cartItems.reduce((a, c) => a + c.price * c.quantity, 0)
   );
-  const shippingPrice = itemsPrice > 3500000 ? 0 : 30000;
-  const taxPrice = paymentMethod == "MercadoPago"? round2(itemsPrice * 0.03) : 0;
-  const totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
+  let shippingPrice = 0;
+  let taxPrice = 0;
+  let totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
 
+  cartItems.filter((item) => item.name != "Licencia Windows")
+
+  if(cartItems.length > 0){
+    shippingPrice = itemsPrice > 3500000 ? 0 : 30000;
+    paymentMethod == "MercadoPago" ? round2(itemsPrice * 0.03) : 0;
+  }
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
