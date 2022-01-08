@@ -6,12 +6,12 @@ export default function Info() {
     return (
         <Layout logo="../../img/logo/logo.svg">
             
-            <TrakingWizard step1 step2 />
+            <TrakingWizard step1 />
 
             <div className={styles.infobox}>
                 <div className={styles.infoboxheader}>
-                    <h2>En Ensamble</h2>
-                    <h2>Guia # 234238673</h2>
+                    <h2>Confirmado</h2>
+                    <h2>Guia # 1000801202276</h2>
                 </div>
 
                 <div className={styles.infoboxcontent}>
@@ -19,31 +19,31 @@ export default function Info() {
                     <div className={styles.colum}>
                         <div className={styles.group}>
                             <span>Nombre</span>
-                            <span>Juancho Aprila</span>
+                            <span>Daniel Bermudez</span>
                         </div>
                         <div className={styles.group}>
                             <span>Cedula</span>
-                            <span>1152478656</span>
+                            <span>1002653847</span>
                         </div>
                     </div>
                     <div className={styles.colum}>
                         <div className={styles.group}>
                             <span>Telefono</span>
-                            <span>3207768205</span>
+                            <span>3117693972</span>
                         </div>
                         <div className={styles.group}>
                             <span>Direccion</span>
-                            <span>Carrera 81 # 45-78</span>
+                            <span>Calle 65 #11-50 La Sultana</span>
                         </div>
                     </div>
                     <div className={styles.colum}>
                         <div className={styles.group}>
                             <span>Ciudad</span>
-                            <span>Pitalito / Huila</span>
+                            <span>Manizalez</span>
                         </div>
                         <div className={styles.group}>
                             <span>Correo</span>
-                            <span>juancho@gmail.com</span>
+                            <span>gato.by@hotmail.com</span>
                         </div>
                     </div>
                 </div>
