@@ -39,7 +39,7 @@ export default function Info() {
                     <div className={styles.colum}>
                         <div className={styles.group}>
                             <span>Ciudad</span>
-                            <span>Manizalez</span>
+                            <span>Manizales</span>
                         </div>
                         <div className={styles.group}>
                             <span>Correo</span>
